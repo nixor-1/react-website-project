@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  /* Accent colors. */
+  --color-accent-color-primary: #517891;
+  --color-accent-color-secondary: #77B1D4;
+  --color-accent-color-tertiary: #FFFFFF;
+
+  /* Background colors. */
+  --color-bg-color-primary: #FFFFFF;
+
+  /* Border colors. */
+  --color-color-primary: #000000;
+
+  /* Text colors. */
+  --color-text-color-primary: #000000;
+
+  /* Font sizes. */
+  --font-size-xs: 0.75rem 1rem;         
+  --font-size-sm: 0.875rem 1.25rem;
+  --font-size-base: 1rem 1.5rem;
+  --font-size-lg: 1.125rem 1.75rem;
+  --font-size-xl: 1.25rem 1.75rem;
+  --font-size-2xl: 1.5rem 2rem;
+  --font-size-3xl: 1.875rem 2.25rem;
+
+  /* Border radii: */
+  --radius-rounding-primary: 10px;
+  --radius-rounding-secondary: 0px;
+
+  /* Border widths. */
+  --border-width-width-primary: 1px;
+  --border-width-width-secondary: 2px;
+  --border-width-width-thick: 10px;
+  --border-width-width-heavy: 8px;
+
+  /* Backgrounds. */
+  --background-image-texture: url("./assets/texture.svg");
+
+  --spacing-page-margin: 2.5rem;
+  --font-main: "Inter", ui-sans-serif, system-ui;
+}
+
+.dark {
+  /* Accent colors. */
+  --color-accent-color-primary: #1e293b;
+
+  /* Background colors. */
+  --color-bg-color-primary: #222222;
+
+  /* Border colors. */
+  --color-color-primary: #FFFFFF;
+
+  /* Text colors. */
+  --color-text-color-primary: #FFFFFF;
+}
+
+
+@layer base {
+  body {
+    background-image: url("./assets/topography.svg");    
+    background-repeat: repeat;
+    background-size: 400px;
+
+    background-color: var(--color-bg-color-primary);
+    /* background-size: cover;  */
+    /* background-attachment: fixed; */
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+    @apply font-main antialiased;
+  }
+  
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 text-white rounded-lg hover:brightness-110 transition;
+  }
+  .text-title {
+    @apply font-bold underline;
+    color: var(--color-text-color-primary);
+    text-decoration-color: var(--color-text-color-primary);
+    @apply decoration-2; 
+  }
+  /* .bg-topo-pattern { */
+  /*   background-image: url("./assets/texture.svg"); */
+  /*   background-repeat: repeat; */
+  /*   background-size: 7px; */
+  /* } */
+}

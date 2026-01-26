@@ -1,0 +1,31 @@
+{
+  "nav-bar": {
+    "dashboard": "Tableau de bord",
+    "settings": "Paramètres",
+    "blog": "Blog",
+    "about me": "À propos de moi",
+    "lang": "Langue : Français"
+  },
+  "socials": {
+    "linkedin": "LinkedIn"
+  },
+  "about-page": {
+    "profile": "Profile",
+    "work-experience": "Expérience profesionnelle",
+    "education": "Éducation",
+    "passions-and-hobbies": "Passions et loisirs"
+  },
+    "blog-posts-table": {
+    "header-title": "Articles de blog",
+    "creation-date": "Créé",
+    "last-update-date": "Mise à jour"
+  },
+    "blog-post": {
+    "creation-date": "Créé :",
+    "last-update-date": "Mis à jour :"
+  },
+  "settings": {
+    "dark-mode": "Mode : sombre",
+    "light-mode": "Mode : clair"
+  }
+}

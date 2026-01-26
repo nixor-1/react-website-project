@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler", // Vite prefers 'bundler' or 'node'
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@react-project/shared": ["../shared/index.ts"]
+    }
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,31 @@
+{
+  "nav-bar": {
+    "dashboard": "Kontrolpanel",
+    "settings": "Indstillinger",
+    "blog": "Blog",
+    "about me": "Om mig",
+    "lang": "Sprog: Dansk"
+  },
+  "socials": {
+    "linkedin": "LinkedIn"
+  },
+  "about-page": {
+    "profile": "Profil",
+    "work-experience": "Arbejdserfaring",
+    "education": "Uddannelse",
+    "passions-and-hobbies": "Interesser og hobbyer"
+  },
+  "blog-posts-table": {
+    "header-title": "Blogindlæg",
+    "creation-date": "Oprettet",
+    "last-update-date": "Opdateret"
+  },
+  "blog-post": {
+    "creation-date": "Oprettet:",
+    "last-update-date": "Opdateret:"
+  },
+  "settings": {
+    "dark-mode": "Tilstand: mørk",
+    "light-mode": "Tilstand: lys"
+  }
+}
