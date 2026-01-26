@@ -1,12 +1,16 @@
 {
   "nav-bar": {
-    "home": "Hjem",
+    "home": "Forside",
     "blog": "Blog",
     "about me": "Om mig",
     "lang": "Sprog: Dansk"
   },
   "socials": {
     "linkedin": "LinkedIn"
+  },
+  "home-page": {
+    "welcome-text-header": "Velkommen til mit digitale univers",
+    "welcome-text-body": "Hvor dejligt at du kiggede forbi. Denne side er skabt som en samlet indgang til hvem jeg er – både når jeg har arbejdstøjet på, og når jeg forfølger mine personlige interesser.\nHer kan du dykke ned i min professionelle rejse og kompetencer, hvis du er her i arbejdsøjemed, eller gå på opdagelse i min blog. På bloggen deler jeg tanker, idéer og emner, som jeg finder inspirerende og værdifulde at dele med omverdenen.\nJeg håber, du finder det, du søger!"
   },
   "about-page": {
     "profile": "Profil",
