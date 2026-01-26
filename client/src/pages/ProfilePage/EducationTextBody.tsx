@@ -26,18 +26,21 @@ const EducationTextBody = () => {
   return (
     <div className="flex flex-col gap-6">
       <ProfilePageTextBoxSegment
-        title="MSc in Computer Science and Engineering"
-        date="8/2023–9/2025"
+        title="MSc in Computer Science and Engineering | DTU"
+        // date="8/2023–9/2025"
+        desc="Uddybede min viden inden for kunstig intelligens og essentielle koncepter inden for computervidenskaben såsom: cybersikkerhed, algoritmer og datastrukturer."
         list={masterEducationBulletPoints}
       />
       <ProfilePageTextBoxSegment
-        title="BSc in Software Technology"
-        date="1/2019–1/2023"
+        title="BSc in Software Technology | DTU"
+        // date="1/2019–1/2023"
+        desc="Lærte om de allervigtigste og grundlæggende koncepter inden for computervidenskaben såsom: databasesystemer, computerarkitektur og effektive værktøjer inden for projektudvikling af software."
         list={bachelorEducationBulletPoints}
       />
       <ProfilePageTextBoxSegment
-        title="Exchange semester at EPFL"
-        date="9/2021–1/2022"
+        title="Exchange semester | EPFL"
+        // date="9/2021–1/2022"
+        desc="Fortsatte min bachelor med et udvekslingsophold på et internationelt anerkendt universitet med højt fagligt niveau. Lærte om operativsystemer, multiprocessor-arkitektur, computernetværker, m.m."
         list={bachelorExchangeEducationBulletPoints}
       />
     </div>

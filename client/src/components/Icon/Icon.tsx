@@ -4,9 +4,9 @@ import {
   LuRss, LuTrash, LuSave, LuRotateCcw,
   LuWrench, LuSend, LuUser, LuBriefcaseBusiness,
   LuGraduationCap, LuFlame, LuEarth, LuMoon,
-  LuSun, LuHouse,
+  LuSun, LuHouse, LuAtSign,
 } from "react-icons/lu";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const IconMap: IconMapping = {
   'home': LuHouse,
@@ -26,7 +26,9 @@ const IconMap: IconMapping = {
   'earth': LuEarth,
   'moon': LuMoon,
   'sun': LuSun,
+  'mail': LuAtSign,
   'linkedin': FaLinkedin,
+  'github': FaGithub,
 }
 
 const Icon = ({ iconName, size }: IconProps) => {

@@ -40,7 +40,7 @@ const Layout = () => {
     />,
     <Btn
       iconName='user'
-      btnText={t('nav-bar.about me')}
+      btnText={t('nav-bar.cv')}
       onClick={() => navigate('/about')}
     />,
     <DropdownMenu
@@ -53,10 +53,21 @@ const Layout = () => {
       btnText={isDarkMode ? t('settings.dark-mode') : t('settings.light-mode')}
       onClick={() => setIsDarkMode(prev => !prev)}
     />,
+    <div className="flex-grow" key="spacer-1" />,
+    <Btn
+      iconName='mail'
+      btnText={t('contact-info.mail')}
+      href='mailto:nickjoergensen1@gmail.com'
+    />,
     <Btn
       iconName='linkedin'
       btnText={t('socials.linkedin')}
       href='https://www.linkedin.com/in/nick-j%C3%B8rgensen-22735293/'
+    />,
+    <Btn
+      iconName='github'
+      btnText={t('socials.github')}
+      href='https://github.com/nixor-1'
     />,
   ]
 

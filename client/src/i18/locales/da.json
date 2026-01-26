@@ -2,11 +2,15 @@
   "nav-bar": {
     "home": "Forside",
     "blog": "Blog",
-    "about me": "Om mig",
+    "cv": "CV",
     "lang": "Sprog: Dansk"
   },
   "socials": {
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "contact-info": {
+    "mail": "nickjoergensen1@gmail.com"
   },
   "home-page": {
     "welcome-text-header": "Velkommen til mit digitale univers",

@@ -2,13 +2,17 @@
   "nav-bar": {
     "home": "Home",
     "blog": "Blog",
-    "about me": "About me",
+    "cv": "CV",
     "lang": "Language: English"
   },
   "socials": {
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
   },
-    "home-page": {
+  "contact-info": {
+    "mail": "nickjoergensen1@gmail.com"
+  },
+  "home-page": {
     "welcome-text-header": "Welcome to my digital universe",
     "welcome-text-body": "How wonderful that you stopped by. This page has been created as a comprehensive introduction to who I am—both when I'm wearing my work clothes and when I'm pursuing my personal interests.\nHere, you can delve into my professional journey and skills if you are here for work purposes, or explore my blog. On the blog, I share thoughts, ideas, and topics that I find inspiring and valuable to share with the world.\nI hope you find what you are looking for!"
   },
