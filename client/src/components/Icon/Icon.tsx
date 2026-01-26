@@ -1,16 +1,15 @@
 import { IconProps, IconMapping } from "./Icon.types";
 import {
-  LuLayoutDashboard, LuBookOpenText, LuPencil, LuPencilRuler,
-  LuRss, LuSettings, LuTrash, LuSave,
-  LuRotateCcw, LuWrench, LuSend, LuUser,
-  LuBriefcaseBusiness, LuGraduationCap, LuFlame, LuEarth,
-  LuMoon, LuSun,
+  LuBookOpenText, LuPencil, LuPencilRuler,
+  LuRss, LuTrash, LuSave, LuRotateCcw,
+  LuWrench, LuSend, LuUser, LuBriefcaseBusiness,
+  LuGraduationCap, LuFlame, LuEarth, LuMoon,
+  LuSun, LuHouse,
 } from "react-icons/lu";
 import { FaLinkedin } from "react-icons/fa";
 
 const IconMap: IconMapping = {
-  'dashboard': LuLayoutDashboard,
-  'settings': LuSettings,
+  'home': LuHouse,
   'rss': LuRss,
   'view': LuBookOpenText,
   'create': LuPencil,

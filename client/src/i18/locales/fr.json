@@ -1,7 +1,6 @@
 {
   "nav-bar": {
-    "dashboard": "Tableau de bord",
-    "settings": "Paramètres",
+    "maison": "Maison",
     "blog": "Blog",
     "about me": "À propos de moi",
     "lang": "Langue : Français"

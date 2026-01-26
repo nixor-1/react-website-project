@@ -29,14 +29,9 @@ const Layout = () => {
 
   const navBtnsTest = [
     <Btn
-      iconName='dashboard'
-      btnText={t('nav-bar.dashboard')}
-      onClick={() => navigate('/dashboard')}
-    />,
-    <Btn
-      iconName='settings'
-      btnText={t('nav-bar.settings')}
-      onClick={() => navigate('/settings')}
+      iconName='home'
+      btnText={t('nav-bar.home')}
+      onClick={() => navigate('/home')}
     />,
     <Btn
       iconName='rss'

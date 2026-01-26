@@ -3,8 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Layout from './Layout'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import Settings from './pages/Settings'
+import Home from './pages/Home'
 import Blog from './pages/Blog/Blog'
 import BlogPost from './pages/BlogPost/BlogPost'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
@@ -18,12 +17,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/dashboard',
-        element: <Dashboard />,
-      },
-      {
-        path: '/settings',
-        element: <Settings />,
+        path: '/home',
+        element: <Home />,
       },
       {
         path: '/blog',

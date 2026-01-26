@@ -1,7 +1,6 @@
 {
   "nav-bar": {
-    "dashboard": "Kontrolpanel",
-    "settings": "Indstillinger",
+    "home": "Hjem",
     "blog": "Blog",
     "about me": "Om mig",
     "lang": "Sprog: Dansk"

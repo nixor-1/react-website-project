@@ -1,7 +1,6 @@
 {
   "nav-bar": {
-    "dashboard": "Dashboard",
-    "settings": "Settings",
+    "home": "Home",
     "blog": "Blog",
     "about me": "About me",
     "lang": "Language: English"
