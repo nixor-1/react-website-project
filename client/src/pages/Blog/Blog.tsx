@@ -10,6 +10,7 @@ import { GenericTableColumn } from "../../components/Table/Table.types";
 import Table from "../../components/Table";
 import PageMargins from "../../components/PageMargins";
 import { useTranslation } from "react-i18next";
+import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -17,12 +18,12 @@ const BlogPost = ({ id, title, description }: BlogPostProps) => {
   return (
     <div
       key={id}
-      className="p-1"
+      className="truncate p-1"
     >
-      <h2 className="text-lg text-color-primary">
+      <h2 className="text-lg text-color-primary truncate">
         {title}
       </h2>
-      <p className="text-base text-color-primary">
+      <p className="text-base text-color-primary truncate">
         {description}
       </p>
     </div>
@@ -74,48 +75,71 @@ const Blog = () => {
   const columns: GenericTableColumn<BlogPostProps>[] = [
     {
       header: t('blog-posts-table.header-title'),
+      className: "w-[50%]",
       render: (post) => (
-        <Btn className="w-full" key={post.id} onClick={() => navigate(`/blog/${post.id}`, { state: post.id as string })}>
-          <BlogPost {...post} />
-        </Btn>
+        // <Btn className="w-full overflow-hidden" key={post.id} onClick={() => navigate(`/blog/${post.id}`, { state: post.id as string })}>
+        <BlogPost {...post} />
       ),
     },
     {
       header: t('blog-posts-table.creation-date'),
+      className: "w-[25%] whitespace-nowrap",
       render: (post) => <p className="text-base text-color-primary">{post.createdAt ? new Date(post.createdAt).toLocaleDateString() : "—"}</p>,
     },
     {
       header: t('blog-posts-table.last-update-date'),
+      className: "w-[25%] whitespace-nowrap",
       render: (post) => <p className="text-base text-color-primary">{post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : "—"}</p>,
     }
   ];
 
+  // const oldReturn = () => {
+  //   return (
+  //     <div className="grid grid-rows-[auto_1fr] h-full w-full overflow-hidden">
+  //
+  //       <StatusBar statusBarText="You are currently viewing all blog posts" orientation={ComponentOrientation.HORIZONTAL} />
+  //
+  //       <div className="grid grid-cols-[auto_1fr] overflow-hidden">
+  //
+  //         <aside className="h-full z-10">
+  //           <BtnBar
+  //             orientation={ComponentOrientation.VERTICAL}
+  //             btnConfigs={blogPostBtns}
+  //           />
+  //         </aside>
+  //
+  //         <PageMargins pageMarginsWidth="large" className="overflow-hidden">
+  //           <div className="h-full w-full overflow-hidden">
+  //             <Table
+  //               data={blogPosts}
+  //               columns={columns}
+  //               rowKey={(post) => post.id}
+  //             />
+  //           </div>
+  //         </PageMargins>
+  //
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
   return (
-    <div className="grid grid-rows-[auto_1fr] h-full w-full overflow-hidden">
-
-      <StatusBar statusBarText="You are currently viewing all blog posts" orientation={ComponentOrientation.HORIZONTAL} />
-
-      <div className="grid grid-cols-[auto_1fr] overflow-hidden">
-
-        <aside className="h-full z-10">
-          <BtnBar
-            orientation={ComponentOrientation.VERTICAL}
-            btnConfigs={blogPostBtns}
-          />
-        </aside>
-
-        <PageMargins pageMarginsWidth="large" className="overflow-hidden">
-          <div className="h-full w-full overflow-hidden">
-            <Table
-              data={blogPosts}
-              columns={columns}
-              rowKey={(post) => post.id}
-            />
-          </div>
-        </PageMargins>
-
-      </div>
-    </div>
+    <PageMarginsNew
+      pageMarginsWidth="2"
+      leftCol={
+        <BtnBar
+          orientation={ComponentOrientation.VERTICAL}
+          btnConfigs={blogPostBtns}
+        />
+      }
+    >
+      <Table
+        data={blogPosts}
+        columns={columns}
+        rowKey={(post) => post.id}
+        useFixedLayout={true}
+      />
+    </PageMarginsNew>
   );
 };
 

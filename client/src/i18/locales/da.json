@@ -20,7 +20,31 @@
     "profile": "Profil",
     "work-experience": "Arbejdserfaring",
     "education": "Uddannelse",
-    "passions-and-hobbies": "Interesser og hobbyer"
+    "passions-and-hobbies": "Interesser og hobbyer",
+    "contact-info": {
+      "contact-info-title": "Kontaktinformation"
+    },
+    "lang": {
+      "lang-title": "Sprogkyndighed",
+      "danish": "Dansk",
+      "english": "Engelsk",
+      "french": "Fransk"
+    },
+    "programming-langs": {
+      "programming-langs-title": "Programmeringssprog"
+    },
+    "environments": {
+      "environments-title": "Miljøer"
+    },
+    "dev-tools": {
+      "dev-tools-title": "Udviklingsværktøjer"
+    },
+    "ai-and-machine-learning": {
+      "ai-and-machine-learning-title": "AI & maskinlæring"
+    },
+    "database-systems": {
+      "database-systems-title": "Databasesystemer"
+    }
   },
   "blog-posts-table": {
     "header-title": "Blogindlæg",

@@ -9,6 +9,17 @@ import EducationTextBody from './EducationTextBody';
 import PassionsAndHobbiesTextBody from './PassionsAndHobbiesTextBody';
 import { useTranslation } from 'react-i18next';
 import { ComponentOrientation } from '@react-project/shared/components';
+import Image from '../../components/Image';
+import portraitImg from "../../assets/portrait-photo-transparent-bg.png";
+import ContactInfoTextBody from './ContactInfo';
+import LangInfoTextBody from './LanguageInfo';
+import ProgrammingLangsTextBody from './ProgrammingLangsTextBody';
+import WebDevTextBody from './WebDevTextBody';
+import EnvironmentsTextBody from './EnvironmentsTextBody';
+import DevelopmentToolsTextBody from './DevelopmentToolsTextBody';
+import AiAndMachineLearningTextBody from './AiAndMachineLearningTextBody';
+import DatabaseSystemsTextBody from './DatabaseSystemsTextBody';
+import PageMarginsNew from '../../components/PageMargins/PageMarginsNew';
 
 interface Segment {
   id: string;
@@ -58,22 +69,132 @@ const ScrollPage = () => {
   ];
 
   return (
-    <div className="h-full grid grid-cols-[auto_1fr] overflow-hidden">
-      <aside className="h-full">
+    <PageMarginsNew
+      pageMarginsWidth='2'
+      isScrollable={true}
+      leftCol={
         <BtnBar
           orientation={ComponentOrientation.VERTICAL}
           btnConfigs={profilePageSegmentsBtns}
         />
-      </aside>
-      <PageMargins className="overflow-auto flex flex-col gap-6" pageMarginsWidth="large">
-        {segments.map((s) => (
-          <div key={s.id} id={s.id}>
-            <TextBox textBoxTitle={s.title} textBoxContent={s.content} iconName={s.iconName} />
+      }
+      rightCol={
+        <BtnBar
+          orientation={ComponentOrientation.VERTICAL}
+          btnConfigs={profilePageSegmentsBtns}
+        />
+      }
+    >
+      <div id="profile" className="flex flex-row gap-6 pb-6">
+        <Image
+          src={portraitImg}
+          height={254}
+          alt="Portrait photo of the owner of the website (Nick Jørgensen)."
+        />
+        <TextBox
+          textBoxTitle={t('about-page.profile')}
+          textBoxContent={
+            <ProfileBody />
+          }
+          iconName='user'
+        />
+      </div>
+
+      <div className="grid grid-cols-3 gap-6">
+        <div className="col-span-2 flex flex-col gap-6">
+          <div id="work-experience">
+            <TextBox
+              textBoxTitle={t('about-page.work-experience')}
+              textBoxContent={
+                <WorkExperienceBody />
+              }
+              iconName='business'
+            />
           </div>
-        ))}
-      </PageMargins>
-    </div>
-  );
+
+          <div id="education">
+            <TextBox
+              textBoxTitle={t('about-page.education')}
+              textBoxContent={
+                <EducationTextBody />
+              }
+              iconName='education'
+            />
+          </div>
+
+          <div id="passions-and-hobbies">
+            <TextBox
+              textBoxTitle={t('about-page.passions-and-hobbies')}
+              textBoxContent={
+                <PassionsAndHobbiesTextBody />
+              }
+              iconName='flame'
+            />
+          </div>
+        </div>
+
+        <aside className="col-span-1 flex flex-col gap-6">
+          <TextBox
+            textBoxTitle={t('about-page.contact-info.contact-info-title')}
+            textBoxContent={
+              <ContactInfoTextBody />
+            }
+            iconName='contact'
+          />
+
+          <TextBox
+            textBoxTitle={t('about-page.lang.lang-title')}
+            textBoxContent={
+              <LangInfoTextBody />
+            }
+            iconName='earth'
+          />
+
+          <TextBox
+            textBoxTitle={t('about-page.programming-langs.programming-langs-title')}
+            textBoxContent={
+              <ProgrammingLangsTextBody />
+            }
+            iconName='binary'
+          />
+
+          <TextBox
+            textBoxTitle={t('about-page.environments.environments-title')}
+            textBoxContent={
+              <EnvironmentsTextBody />
+            }
+            iconName='environments'
+          />
+
+          <TextBox
+            textBoxTitle={t('about-page.dev-tools.dev-tools-title')}
+            textBoxContent={
+              <DevelopmentToolsTextBody />
+            }
+            iconName='wrench'
+          />
+
+          <TextBox
+            textBoxTitle={t('about-page.ai-and-machine-learning.ai-and-machine-learning-title')}
+            textBoxContent={
+              <AiAndMachineLearningTextBody />
+            }
+            iconName='bot'
+          />
+
+          <TextBox
+            textBoxTitle={t('about-page.database-systems.database-systems-title')}
+            textBoxContent={
+              <DatabaseSystemsTextBody />
+            }
+            iconName='database'
+          />
+
+        </aside>
+
+      </div>
+    </PageMarginsNew>
+  )
 };
 
 export default ScrollPage;

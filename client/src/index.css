@@ -14,6 +14,7 @@
 
   /* Text colors. */
   --color-text-color-primary: #000000;
+  --color-text-color-secondary: #FFFFFF;
 
   /* Font sizes. */
   --font-size-xs: 0.75rem 1rem;         
@@ -79,8 +80,14 @@
   .btn-primary {
     @apply px-4 py-2 text-white rounded-lg hover:brightness-110 transition;
   }
-  .text-title {
-    @apply font-bold underline;
+  .text-title-primary {
+    @apply font-bold text-xl;
+    color: var(--color-text-color-primary);
+    text-decoration-color: var(--color-text-color-primary);
+    @apply decoration-2; 
+  }
+  .text-title-secondary {
+    @apply font-bold text-lg;
     color: var(--color-text-color-primary);
     text-decoration-color: var(--color-text-color-primary);
     @apply decoration-2; 

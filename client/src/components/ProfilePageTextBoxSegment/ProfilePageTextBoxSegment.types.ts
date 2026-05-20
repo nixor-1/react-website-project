@@ -1,4 +1,5 @@
 import { ListItem } from "../List";
+import { ReactNode } from "react";
 
 interface BaseProps {
   title: string;
@@ -6,12 +7,12 @@ interface BaseProps {
 }
 
 interface WithDesc extends BaseProps {
-  desc: string;
+  desc: ReactNode;
   list?: ListItem[];
 }
 
 interface WithList extends BaseProps {
-  desc?: string;
+  desc?: ReactNode;
   list: ListItem[];
 }
 

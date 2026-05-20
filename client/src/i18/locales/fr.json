@@ -20,7 +20,31 @@
     "profile": "Profil",
     "work-experience": "Expérience profesionnelle",
     "education": "Éducation",
-    "passions-and-hobbies": "Passions et loisirs"
+    "passions-and-hobbies": "Passions et loisirs",
+    "contact-info": {
+      "contact-info-title": "Information de contact"
+    },
+    "lang": {
+      "lang-title": "Maîtrise des langues",
+      "danish": "Danois",
+      "english": "Anglais",
+      "french": "Français"
+    },
+    "programming-langs": {
+      "programming-langs-title": "Langages de programmation"
+    },
+    "environments": {
+      "environments-title": "Environnements"
+    },
+    "dev-tools": {
+      "dev-tools-title": "Outils de développement"
+    },
+    "ai-and-machine-learning": {
+      "ai-and-machine-learning-title": "IA & l'apprentissage automatique"
+    },
+    "database-systems": {
+      "database-systems-title": "Systèmes de données"
+    }
   },
     "blog-posts-table": {
     "header-title": "Articles de blog",

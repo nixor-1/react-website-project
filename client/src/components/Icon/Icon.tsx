@@ -4,7 +4,14 @@ import {
   LuRss, LuTrash, LuSave, LuRotateCcw,
   LuWrench, LuSend, LuUser, LuBriefcaseBusiness,
   LuGraduationCap, LuFlame, LuEarth, LuMoon,
-  LuSun, LuHouse, LuAtSign,
+  LuSun, LuHouse, LuAtSign, LuPhone,
+  LuContact,
+  LuBinary,
+  LuCodeXml,
+  LuAppWindow,
+  LuBot,
+  LuDatabase,
+  LuMapPin,
 } from "react-icons/lu";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
@@ -27,8 +34,17 @@ const IconMap: IconMapping = {
   'moon': LuMoon,
   'sun': LuSun,
   'mail': LuAtSign,
+  'contact': LuContact,
   'linkedin': FaLinkedin,
   'github': FaGithub,
+  'phone': LuPhone,
+  'binary': LuBinary,
+  'web-dev': LuCodeXml,
+  'environments': LuAppWindow,
+  'wrench': LuWrench,
+  'bot': LuBot,
+  'database': LuDatabase,
+  'location': LuMapPin,
 }
 
 const Icon = ({ iconName, size }: IconProps) => {

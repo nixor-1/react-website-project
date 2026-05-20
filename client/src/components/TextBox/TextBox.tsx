@@ -7,12 +7,12 @@ const TextBox = ({
   iconName
 }: TextBoxProps) => {
   return (
-    <section className="p-4 border-width-secondary border-color-primary rounded-rounding-primary bg-bg-color-primary">
-      <div className="flex flex-row items-center gap-2">
+    <section className="border-width-secondary border-color-primary rounded-rounding-primary bg-bg-color-primary overflow-hidden">
+      <div className="flex flex-row items-center gap-2 bg-accent-color-primary p-4 border-b">
         {iconName && <Icon iconName={iconName} />}
-        {textBoxTitle && <h2 className="text-2xl text-title">{textBoxTitle}</h2>}
+        {textBoxTitle && <h1 className="text-title-primary">{textBoxTitle}</h1>}
       </div>
-      <div className="text-color-primary whitespace-pre-wrap leading-relaxed">
+      <div className="text-color-primary whitespace-pre-wrap leading-relaxed p-4">
         {textBoxContent}
       </div>
     </section >
