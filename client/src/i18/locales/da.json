@@ -67,6 +67,7 @@
     "education": {
       "title": "Uddannelse",
       "dtu-master": {
+        "title": "MSc | Informationsteknologi",
         "university": "Danmarks tekniske universitet (DTU)",
         "items": [
           {
@@ -84,6 +85,7 @@
         ]
       },
       "dtu-bachelor": {
+        "title": "BSc | Softwareteknologi",
         "university": "Danmarks tekniske universitet (DTU)",
         "items": [
           {
@@ -109,6 +111,7 @@
         ]
       },
       "epfl-bachelor": {
+        "title": "BSc | Udvekslingssemester",
         "university": "Swiss federal institute of technology in Lausanne (EPFL)",
         "items": [
           {

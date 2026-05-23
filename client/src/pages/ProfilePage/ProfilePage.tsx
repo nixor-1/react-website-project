@@ -45,7 +45,7 @@ const ScrollPage = () => {
     },
     {
       iconName: "education",
-      btnText: t("about-page.education"),
+      btnText: t("about-page.education.title"),
       onClick: () => scrollToSection("education"),
     },
     {
@@ -147,7 +147,7 @@ const ScrollPage = () => {
 
           <div id="education">
             <TextBox
-              textBoxTitle={t("about-page.education")}
+              textBoxTitle={t("about-page.education.title")}
               textBoxContent={<EducationTextBody />}
               iconName="education"
             />
