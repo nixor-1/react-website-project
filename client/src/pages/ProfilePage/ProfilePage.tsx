@@ -22,48 +22,8 @@ import AiAndMachineLearningTextBody from "./AiAndMachineLearningTextBody";
 import DatabaseSystemsTextBody from "./DatabaseSystemsTextBody";
 import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
 
-interface Segment {
-  id: string;
-  title: string;
-  content: ReactNode;
-  iconName?: string;
-}
-
-const segments: Segment[] = [
-  {
-    id: "profile",
-    iconName: "user",
-    title: "Profile",
-    content: <ProfileBody />,
-  },
-  {
-    id: "work-experience",
-    iconName: "business",
-    title: "Work experience",
-    content: <WorkExperienceBody />,
-  },
-  {
-    id: "education",
-    iconName: "education",
-    title: "Education",
-    content: <EducationTextBody />,
-  },
-  {
-    id: "projects",
-    iconName: "education",
-    title: "Projects",
-    content: <EducationTextBody />,
-  },
-  {
-    id: "passions-and-hobbies",
-    iconName: "flame",
-    title: "Passions and hobbies",
-    content: <PassionsAndHobbiesTextBody />,
-  },
-];
-
 const ScrollPage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -80,7 +40,7 @@ const ScrollPage = () => {
     },
     {
       iconName: "business",
-      btnText: t("about-page.work-experience.work-experience-title"),
+      btnText: t("about-page.work-experience.title"),
       onClick: () => scrollToSection("work-experience"),
     },
     {
@@ -99,27 +59,6 @@ const ScrollPage = () => {
       onClick: () => scrollToSection("passions-and-hobbies"),
     },
   ];
-
-  const ViewPdfDocumentBtn = () => {
-    return (
-      <Btn
-        href="/cv-engelsk.pdf"
-        download="Nick_Jorgensen_Resume.pdf"
-        btnText="her"
-      />
-    );
-  };
-
-  const DownloadPdfDocumentBtn = () => {
-    return (
-      <Btn
-        href="/cv-engelsk.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        btnText="her"
-      />
-    );
-  };
 
   return (
     <PageMarginsNew

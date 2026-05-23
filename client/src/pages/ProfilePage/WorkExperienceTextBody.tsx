@@ -48,29 +48,16 @@ const WorkExperienceBody = () => {
       {/* <Callout */}
       {/*   title={ */}
       <div className="flex flex-col">
-        <h2 className="text-title-secondary">Frontend developer</h2>
+        <h2 className="text-title-secondary">
+          {t("about-page.work-experience.netcompany.role")}
+        </h2>
         <div className="flex flex-row items-center gap-2">
           <Icon iconName="location" />
-          <p>Netcompany</p>
+          <p>{t("about-page.work-experience.netcompany.company")}</p>
         </div>
       </div>
-      {/*   } */}
-      {/*   type="info" */}
-      {/* > */}
-      <List
-        listItems={[
-          {
-            listItemLabel: "Frontend development",
-            listItemBody:
-              "Built and maintained responsive user interfaces using React and TypeScript.",
-          },
-          {
-            listItemLabel: "Workflow management",
-            listItemBody:
-              "Utilized Azure DevOps to track sprint progress, manage backlogs, and ensure timely delivery of assigned tasks.",
-          },
-        ]}
-      />
+
+      <List listItems={netcompanyItems} />
       {/* </Callout> */}
     </div>
   );

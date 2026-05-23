@@ -1,17 +1,28 @@
 import { ComponentOrientation } from "@react-project/shared/components";
 import Icon from "../../components/Icon";
 import List from "../../components/List";
-import { ListItem } from "../../components/List";
-import ProfilePageTextBoxSegment from "../../components/ProfilePageTextBoxSegment";
 import SeparatorLine from "../../components/SeparatorLine";
 import { SeparatorLineType } from "../../components/SeparatorLine/SeparatorLine.types";
-import Callout from "../../components/Callout";
+import { useTranslation } from "react-i18next";
+
+interface TranslatedListItem {
+  listItemLabel: string;
+  listItemBody: string;
+}
 
 const EducationTextBody = () => {
+  const { t } = useTranslation();
+
+  const dtuBachelorItems = t("about-page.work-experience.kintella.items", {
+    returnObjects: true,
+  }) as TranslatedListItem[];
+
+  const dtuMasterItems = t("about-page.work-experience.netcompany.items", {
+    returnObjects: true,
+  }) as TranslatedListItem[];
+
   return (
     <div className="flex flex-col">
-      {/* <Callout */}
-      {/*   title={ */}
       <div className="flex flex-col">
         <h2 className="text-title-secondary">
           MSc | Computer science and engineering
@@ -21,9 +32,6 @@ const EducationTextBody = () => {
           <p>Technical University of Denmark (DTU)</p>
         </div>
       </div>
-      {/*   } */}
-      {/*   type="info" */}
-      {/* > */}
       <List
         listItems={[
           {
@@ -43,7 +51,6 @@ const EducationTextBody = () => {
           },
         ]}
       />
-      {/* </Callout> */}
 
       <SeparatorLine
         orientation={ComponentOrientation.HORIZONTAL}
@@ -51,8 +58,6 @@ const EducationTextBody = () => {
         className="my-4"
       />
 
-      {/* <Callout */}
-      {/*   title={ */}
       <div className="flex flex-col">
         <h2 className="text-title-secondary">BSc | Software technology</h2>
         <div className="flex flex-row items-center gap-2">
@@ -60,9 +65,6 @@ const EducationTextBody = () => {
           <p>Technical University of Denmark (DTU)</p>
         </div>
       </div>
-      {/*   } */}
-      {/*   type="info" */}
-      {/* > */}
       <List
         listItems={[
           {
@@ -92,7 +94,6 @@ const EducationTextBody = () => {
           },
         ]}
       />
-      {/* </Callout> */}
 
       <SeparatorLine
         orientation={ComponentOrientation.HORIZONTAL}
@@ -100,8 +101,6 @@ const EducationTextBody = () => {
         className="my-4"
       />
 
-      {/* <Callout */}
-      {/*   title={ */}
       <div className="flex flex-col">
         <h2 className="text-title-secondary">BSc | Study exchange</h2>
         <div className="flex flex-row items-center gap-2">
@@ -109,9 +108,6 @@ const EducationTextBody = () => {
           <p>Swiss Federal Institute of Technology in Lausanne (EPFL)</p>
         </div>
       </div>
-      {/*   } */}
-      {/*   type="info" */}
-      {/* > */}
       <List
         listItems={[
           {
@@ -126,7 +122,6 @@ const EducationTextBody = () => {
           },
         ]}
       />
-      {/* </Callout> */}
     </div>
   );
 };
