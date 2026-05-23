@@ -17,9 +17,55 @@
     "welcome-text-body": "Hvor dejligt at du kiggede forbi. Denne side er skabt som en samlet indgang til hvem jeg er – både når jeg har arbejdstøjet på, og når jeg forfølger mine personlige interesser.\nHer kan du dykke ned i min professionelle rejse og kompetencer, hvis du er her i arbejdsøjemed, eller gå på opdagelse i min blog. På bloggen deler jeg tanker, idéer og emner, som jeg finder inspirerende og værdifulde at dele med omverdenen.\nJeg håber, du finder det, du søger!"
   },
   "about-page": {
-    "profile": "Profil",
-    "work-experience": "Arbejdserfaring",
+    "profile": {
+      "profile-title": "Profil",
+      "profile-text-body": "Kandidat i Informationsteknologi med solid erfaring inden for full stackudvikling og speciale i kunstig intelligens. Jeg brænder for kunstig intelligens og softwareudvikling, samt hvordan disse kan anvendes til at skabe reel samfundsværdi. Som person trives jeg i tværfaglige teams med frihed under ansvar, og muligheden for at præge projekter fra idé til eksekvering."
+    },
+    "pdf-document": {
+      "title": "PDF-dokument med mit CV",
+      "text-body": "Du kan tilgå et PDF-dokument med mit CV ved at klikke <0>her</0>, eller downloade det ved at klikke <1>her</1>."
+    },
+    "work-experience": {
+      "title": "Arbejdserfaring",
+      "kintella": {
+        "role": "Full stack-udvikler",
+        "company": "Kintella",
+        "items": [
+          {
+            "listItemLabel": "Systemintegrationer",
+            "listItemBody": "Implementerede integrationer med eksisterende sundhedsplatforme." 
+          },
+          {
+            "listItemLabel": "Notifikationer", 
+            "listItemBody": "Implementerede et notifikationssystem som fungerede på tværs af platforme ved hjælp af Firebase Cloud Messaging."
+          },
+          {
+            "listItemLabel": "GraphQL-arkitektur", 
+            "listItemBody": "Designede og implementerede GraphQL-API-laget, schemas, effektive server-side-resolvere, og optimerede client-side queries."
+          },
+          {
+            "listItemLabel": "Feature-udvikling",  
+            "listItemBody": "Implementerede og udviklede nye features fra ide og koncept til databasedesign og implementering."
+          }
+        ]
+      },
+      "netcompany": {
+        "role": "Frontend developer",
+        "company": "Netcompany",
+        "items": [
+          {
+            "listItemLabel": "Frontend development",
+            "listItemBody": "Built and maintained responsive user interfaces using React and TypeScript."
+          },
+          {
+            "listItemLabel": "Workflow management",
+            "listItemBody": "Utilized Azure DevOps to track sprint progress, manage backlogs, and ensure timely delivery of assigned tasks."
+          }
+        ]
+      }
+    },
     "education": "Uddannelse",
+    "projects": "Projekter",
     "passions-and-hobbies": "Interesser og hobbyer",
     "contact-info": {
       "contact-info-title": "Kontaktinformation"

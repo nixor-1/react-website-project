@@ -17,9 +17,55 @@
     "welcome-text-body": "Merci beaucoup de votre visite. Ce site a été créé pour vous donner un aperçu complet de qui je suis, tant dans ma vie professionnelle que dans mes loisirs.\nSi vous êtes ici pour des raisons professionnelles, vous pouvez découvrir mon parcours professionnel et mes compétences, ou explorer mon blog. Sur mon blog, je partage des réflexions, des idées et des sujets que je trouve inspirants et qui méritent d'être partagés avec le monde extérieur.\nJ'espère que vous trouverez ce que vous cherchez !"
   },
   "about-page": {
-    "profile": "Profil",
-    "work-experience": "Expérience profesionnelle",
+    "profile": {
+      "profile-title": "Profil",
+      "profile-text-body": "Titulaire d'un master en informatique, je possède une solide expérience en développement full stack et me suis spécialisé dans l'intelligence artificielle. Je suis passionné par l'intelligence artificielle et le développement logiciel, ainsi que comment ces domaines peuvent aider la société. J'apprécie travailler au sein d'équipes pluridisciplinaires, me laissant une grande liberté en assumant mes responsabilités, et j'aime avoir de vraie influence sur les projets, de leur conception à leur mise en œuvre."
+    },
+    "pdf-document": {
+      "title": "Document PDF contenant mon CV",
+      "text-body": "Vous pouvez accéder à un document PDF contenant mon CV par cliquer <0>ici</0>, or le télécharger par cliquer <1>ici</1>."  
+    },
+    "work-experience": {
+      "title": "Expérience professionelle",
+      "kintella": {
+        "role": "Full stack developer",
+        "company": "Kintella",
+        "items": [
+          {
+            "listItemLabel": "System integrations",
+            "listItemBody": "Implemented integrations with existing health platforms."
+          },
+          {
+            "listItemLabel": "Notifications",
+            "listItemBody": "Implemented a cross-platform notifications with Firebase Cloud Messaging."
+          },
+          {
+            "listItemLabel": "GraphQL architecture",
+            "listItemBody": "Designed and implemented the GraphQL API layer, schemas, efficient server-side resolvers, and optimized client-side queries for performance."
+          },
+          {
+            "listItemLabel": "Full-cycle feature development",
+            "listItemBody": "Implemented new features from initial concept and database design through to implementation."
+          }
+        ]
+      },
+      "netcompany": {
+        "role": "Frontend developer",
+        "company": "Netcompany",
+        "items": [
+          {
+            "listItemLabel": "Frontend development",
+            "listItemBody": "Built and maintained responsive user interfaces using React and TypeScript."
+          },
+          {
+            "listItemLabel": "Workflow management",
+            "listItemBody": "Utilized Azure DevOps to track sprint progress, manage backlogs, and ensure timely delivery of assigned tasks."
+          }
+        ]
+      }
+    },
     "education": "Éducation",
+    "projects": "Projets",
     "passions-and-hobbies": "Passions et loisirs",
     "contact-info": {
       "contact-info-title": "Information de contact"

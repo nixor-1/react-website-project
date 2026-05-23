@@ -1,9 +1,9 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ComponentPropsWithoutRef } from "react";
 
 export enum BtnVariant {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TERTIARY = 'tertiary'
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  TERTIARY = "tertiary",
 }
 
 type BtnContentProps =
@@ -18,20 +18,26 @@ interface BtnBaseProps extends PropsWithChildren {
   rotatedText?: boolean;
   isToggled?: boolean;
   hasShadow?: boolean;
-};
+}
+
+type LinkAttributes = Pick<
+  ComponentPropsWithoutRef<"a">,
+  "target" | "rel" | "download"
+>;
+type BtnAttributes = Pick<ComponentPropsWithoutRef<"button">, "type">;
 
 type BtnClickProps =
+  | ({
+      onClick: () => void;
+      href?: never;
+    } & BtnAttributes)
+  | ({
+      href: string;
+      onClick?: never;
+    } & LinkAttributes)
   | {
-    onClick: () => void;
-    href?: never;
-  }
-  | {
-    href: string;
-    onClick?: never;
-  }
-  | {
-    href?: never;
-    onClick?: never;
-  };
+      href?: never;
+      onClick?: never;
+    };
 
 export type BtnProps = BtnBaseProps & BtnClickProps & BtnContentProps;

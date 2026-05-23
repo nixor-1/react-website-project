@@ -1,25 +1,26 @@
-import React, { ReactNode, useRef } from 'react';
-import Btn, { BtnProps } from '../../components/Btn';
-import BtnBar from '../../components/BtnBar';
-import TextBox from '../../components/TextBox';
-import PageMargins from '../../components/PageMargins';
-import WorkExperienceBody from './WorkExperienceTextBody';
-import ProfileBody from './ProfileTextBody';
-import EducationTextBody from './EducationTextBody';
-import PassionsAndHobbiesTextBody from './PassionsAndHobbiesTextBody';
-import { useTranslation } from 'react-i18next';
-import { ComponentOrientation } from '@react-project/shared/components';
-import Image from '../../components/Image';
+import React, { ReactNode, useRef } from "react";
+import Btn, { BtnProps } from "../../components/Btn";
+import BtnBar from "../../components/BtnBar";
+import TextBox from "../../components/TextBox";
+import PageMargins from "../../components/PageMargins";
+import WorkExperienceBody from "./WorkExperienceTextBody";
+import ProfileBody from "./ProfileTextBody";
+import EducationTextBody from "./EducationTextBody";
+import ProjectsTextBody from "./ProjectsTextBody";
+import PassionsAndHobbiesTextBody from "./PassionsAndHobbiesTextBody";
+import { useTranslation, Trans } from "react-i18next";
+import { ComponentOrientation } from "@react-project/shared/components";
+import Image from "../../components/Image";
 import portraitImg from "../../assets/portrait-photo-transparent-bg.png";
-import ContactInfoTextBody from './ContactInfo';
-import LangInfoTextBody from './LanguageInfo';
-import ProgrammingLangsTextBody from './ProgrammingLangsTextBody';
-import WebDevTextBody from './WebDevTextBody';
-import EnvironmentsTextBody from './EnvironmentsTextBody';
-import DevelopmentToolsTextBody from './DevelopmentToolsTextBody';
-import AiAndMachineLearningTextBody from './AiAndMachineLearningTextBody';
-import DatabaseSystemsTextBody from './DatabaseSystemsTextBody';
-import PageMarginsNew from '../../components/PageMargins/PageMarginsNew';
+import ContactInfoTextBody from "./ContactInfo";
+import LangInfoTextBody from "./LanguageInfo";
+import ProgrammingLangsTextBody from "./ProgrammingLangsTextBody";
+import WebDevTextBody from "./WebDevTextBody";
+import EnvironmentsTextBody from "./EnvironmentsTextBody";
+import DevelopmentToolsTextBody from "./DevelopmentToolsTextBody";
+import AiAndMachineLearningTextBody from "./AiAndMachineLearningTextBody";
+import DatabaseSystemsTextBody from "./DatabaseSystemsTextBody";
+import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
 
 interface Segment {
   id: string;
@@ -29,10 +30,36 @@ interface Segment {
 }
 
 const segments: Segment[] = [
-  { id: 'profile', iconName: 'user', title: 'Profile', content: <ProfileBody /> },
-  { id: 'work-experience', iconName: 'business', title: 'Work experience', content: <WorkExperienceBody /> },
-  { id: 'education', iconName: 'education', title: 'Education', content: <EducationTextBody /> },
-  { id: 'passions-and-hobbies', iconName: 'flame', title: 'Passions and hobbies', content: <PassionsAndHobbiesTextBody /> },
+  {
+    id: "profile",
+    iconName: "user",
+    title: "Profile",
+    content: <ProfileBody />,
+  },
+  {
+    id: "work-experience",
+    iconName: "business",
+    title: "Work experience",
+    content: <WorkExperienceBody />,
+  },
+  {
+    id: "education",
+    iconName: "education",
+    title: "Education",
+    content: <EducationTextBody />,
+  },
+  {
+    id: "projects",
+    iconName: "education",
+    title: "Projects",
+    content: <EducationTextBody />,
+  },
+  {
+    id: "passions-and-hobbies",
+    iconName: "flame",
+    title: "Passions and hobbies",
+    content: <PassionsAndHobbiesTextBody />,
+  },
 ];
 
 const ScrollPage = () => {
@@ -41,36 +68,62 @@ const ScrollPage = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   const profilePageSegmentsBtns: BtnProps[] = [
     {
-      iconName: 'user',
-      btnText: t('about-page.profile'),
-      onClick: () => scrollToSection('profile'),
+      iconName: "user",
+      btnText: t("about-page.profile.profile-title"),
+      onClick: () => scrollToSection("profile"),
     },
     {
-      iconName: 'business',
-      btnText: t('about-page.work-experience'),
-      onClick: () => scrollToSection('work-experience'),
+      iconName: "business",
+      btnText: t("about-page.work-experience.work-experience-title"),
+      onClick: () => scrollToSection("work-experience"),
     },
     {
-      iconName: 'education',
-      btnText: t('about-page.education'),
-      onClick: () => scrollToSection('education'),
+      iconName: "education",
+      btnText: t("about-page.education"),
+      onClick: () => scrollToSection("education"),
     },
     {
-      iconName: 'flame',
-      btnText: t('about-page.passions-and-hobbies'),
-      onClick: () => scrollToSection('passions-and-hobbies'),
+      iconName: "projects",
+      btnText: t("about-page.projects"),
+      onClick: () => scrollToSection("projects"),
+    },
+    {
+      iconName: "flame",
+      btnText: t("about-page.passions-and-hobbies"),
+      onClick: () => scrollToSection("passions-and-hobbies"),
     },
   ];
 
+  const ViewPdfDocumentBtn = () => {
+    return (
+      <Btn
+        href="/cv-engelsk.pdf"
+        download="Nick_Jorgensen_Resume.pdf"
+        btnText="her"
+      />
+    );
+  };
+
+  const DownloadPdfDocumentBtn = () => {
+    return (
+      <Btn
+        href="/cv-engelsk.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        btnText="her"
+      />
+    );
+  };
+
   return (
     <PageMarginsNew
-      pageMarginsWidth='2'
+      pageMarginsWidth="2"
       isScrollable={true}
       leftCol={
         <BtnBar
@@ -92,11 +145,54 @@ const ScrollPage = () => {
           alt="Portrait photo of the owner of the website (Nick Jørgensen)."
         />
         <TextBox
-          textBoxTitle={t('about-page.profile')}
+          textBoxTitle={t("about-page.profile.profile-title")}
+          textBoxContent={<ProfileBody />}
+          iconName="user"
+        />
+      </div>
+
+      {/* <div className="pb-6"> */}
+      {/*   <TextBox */}
+      {/*     textBoxTitle="PDF-dokument med mit CV" */}
+      {/*     textBoxContent={ */}
+      {/*       <p> */}
+      {/*         Du kan tilgå et PDF-dokument med mit CV i browseren ved at klikke{" "} */}
+      {/*         <ViewPdfDocumentBtn />, eller downloade det ved at klikke{" "} */}
+      {/*         <DownloadPdfDocumentBtn />. */}
+      {/*       </p> */}
+      {/*     } */}
+      {/*     iconName="user" */}
+      {/*   /> */}
+      {/* </div> */}
+
+      <div className="pb-6">
+        <TextBox
+          textBoxTitle={t("about-page.pdf-document.title")}
+          iconName="user"
           textBoxContent={
-            <ProfileBody />
+            <p className="text-color-primary">
+              <Trans
+                i18nKey="about-page.pdf-document.text-body"
+                components={[
+                  <Btn
+                    href="/cv-engelsk.pdf"
+                    download="Nick_Jorgensen_Resume.pdf"
+                    // btnText="her"
+                  >
+                    {""}
+                  </Btn>,
+                  <Btn
+                    href="/cv-engelsk.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    // btnText="her"
+                  >
+                    {""}
+                  </Btn>,
+                ]}
+              />
+            </p>
           }
-          iconName='user'
         />
       </div>
 
@@ -104,97 +200,89 @@ const ScrollPage = () => {
         <div className="col-span-2 flex flex-col gap-6">
           <div id="work-experience">
             <TextBox
-              textBoxTitle={t('about-page.work-experience')}
-              textBoxContent={
-                <WorkExperienceBody />
-              }
-              iconName='business'
+              textBoxTitle={t("about-page.work-experience.title")}
+              textBoxContent={<WorkExperienceBody />}
+              iconName="business"
             />
           </div>
 
           <div id="education">
             <TextBox
-              textBoxTitle={t('about-page.education')}
-              textBoxContent={
-                <EducationTextBody />
-              }
-              iconName='education'
+              textBoxTitle={t("about-page.education")}
+              textBoxContent={<EducationTextBody />}
+              iconName="education"
+            />
+          </div>
+
+          <div id="projects">
+            <TextBox
+              textBoxTitle={t("about-page.projects")}
+              textBoxContent={<ProjectsTextBody />}
+              iconName="projects"
             />
           </div>
 
           <div id="passions-and-hobbies">
             <TextBox
-              textBoxTitle={t('about-page.passions-and-hobbies')}
-              textBoxContent={
-                <PassionsAndHobbiesTextBody />
-              }
-              iconName='flame'
+              textBoxTitle={t("about-page.passions-and-hobbies")}
+              textBoxContent={<PassionsAndHobbiesTextBody />}
+              iconName="flame"
             />
           </div>
         </div>
 
         <aside className="col-span-1 flex flex-col gap-6">
           <TextBox
-            textBoxTitle={t('about-page.contact-info.contact-info-title')}
-            textBoxContent={
-              <ContactInfoTextBody />
-            }
-            iconName='contact'
+            textBoxTitle={t("about-page.contact-info.contact-info-title")}
+            textBoxContent={<ContactInfoTextBody />}
+            iconName="contact"
           />
 
           <TextBox
-            textBoxTitle={t('about-page.lang.lang-title')}
-            textBoxContent={
-              <LangInfoTextBody />
-            }
-            iconName='earth'
+            textBoxTitle={t("about-page.lang.lang-title")}
+            textBoxContent={<LangInfoTextBody />}
+            iconName="earth"
           />
 
           <TextBox
-            textBoxTitle={t('about-page.programming-langs.programming-langs-title')}
-            textBoxContent={
-              <ProgrammingLangsTextBody />
-            }
-            iconName='binary'
+            textBoxTitle={t(
+              "about-page.programming-langs.programming-langs-title",
+            )}
+            textBoxContent={<ProgrammingLangsTextBody />}
+            iconName="binary"
           />
 
           <TextBox
-            textBoxTitle={t('about-page.environments.environments-title')}
-            textBoxContent={
-              <EnvironmentsTextBody />
-            }
-            iconName='environments'
+            textBoxTitle={t("about-page.environments.environments-title")}
+            textBoxContent={<EnvironmentsTextBody />}
+            iconName="environments"
           />
 
           <TextBox
-            textBoxTitle={t('about-page.dev-tools.dev-tools-title')}
-            textBoxContent={
-              <DevelopmentToolsTextBody />
-            }
-            iconName='wrench'
+            textBoxTitle={t("about-page.dev-tools.dev-tools-title")}
+            textBoxContent={<DevelopmentToolsTextBody />}
+            iconName="wrench"
           />
 
           <TextBox
-            textBoxTitle={t('about-page.ai-and-machine-learning.ai-and-machine-learning-title')}
-            textBoxContent={
-              <AiAndMachineLearningTextBody />
-            }
-            iconName='bot'
+            textBoxTitle={t(
+              "about-page.ai-and-machine-learning.ai-and-machine-learning-title",
+            )}
+            textBoxContent={<AiAndMachineLearningTextBody />}
+            iconName="bot"
           />
 
           <TextBox
-            textBoxTitle={t('about-page.database-systems.database-systems-title')}
-            textBoxContent={
-              <DatabaseSystemsTextBody />
-            }
-            iconName='database'
+            textBoxTitle={t(
+              "about-page.database-systems.database-systems-title",
+            )}
+            textBoxContent={<DatabaseSystemsTextBody />}
+            iconName="database"
           />
-
         </aside>
-
       </div>
     </PageMarginsNew>
-  )
+  );
 };
 
 export default ScrollPage;

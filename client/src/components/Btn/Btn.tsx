@@ -1,6 +1,7 @@
 import Icon from "../Icon";
 import { BtnProps, BtnVariant } from "./Btn.types";
 import Link from "../Link";
+import { ComponentPropsWithoutRef } from "react";
 
 const Btn = ({
   disabled = false,
@@ -14,14 +15,17 @@ const Btn = ({
   children,
   ...props
 }: BtnProps) => {
-
   const renderContent = () => {
     if (children) return children;
     return (
-      <div className={`flex ${rotatedText ? 'flex-col items-center justify-center gap-1' : 'flex-row items-center justify-center gap-1'}`}>
+      <div
+        className={`flex ${rotatedText ? "flex-col items-center justify-center gap-1" : "flex-row items-center justify-center gap-1"}`}
+      >
         {iconName && <Icon iconName={iconName} />}
         {btnText && (
-          <span className={`text-color-primary ${rotatedText ? '[writing-mode:vertical-lr]' : ''}`}>
+          <span
+            className={`text-color-primary ${rotatedText ? "[writing-mode:vertical-lr]" : ""}`}
+          >
             {btnText}
           </span>
         )}
@@ -31,10 +35,10 @@ const Btn = ({
 
   const commonClasses = `
     ${className} 
-    ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} 
-    ${isToggled ? 'bg-gray-200' : 'bg-bg-color-primary'} 
-    ${rotatedText ? 'py-2 px-1' : 'py-1 px-2'}
-    ${hasShadow ? 'shadow' : ''}
+    ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} 
+    ${isToggled ? "bg-gray-200" : "bg-bg-color-primary"} 
+    ${rotatedText ? "py-2 px-1" : "py-1 px-2"}
+    ${hasShadow ? "shadow" : ""}
     hover:bg-gray-100 font-semibold text-base border border-color-primary border-width-primary rounded-rounding-primary shadow 
     inline-block text-center no-underline text-color-primary bg-topo-pattern
   `.trim();
@@ -52,6 +56,7 @@ const Btn = ({
       className={commonClasses}
       onClick={"onClick" in props ? props.onClick : undefined}
       disabled={disabled}
+      {...(props as ComponentPropsWithoutRef<"button">)}
     >
       {renderContent()}
     </button>
