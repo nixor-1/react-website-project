@@ -10,15 +10,18 @@ const Table = <T,>({
   isEmbedded = false,
   showHeaders = true,
   showSepLines = true,
-  heightStyling = "h-full",
+  // heightStyling = "h-full",
+  heightStyling = "max-h-[calc(100vh-1rem)]",
   widthStyling = "w-full",
   alignment = "center",
   sepLineType = SeparatorLineType.Solid,
   useFixedLayout = true,
-  rowKey
+  rowKey,
 }: GenericTableProps<T>) => {
-  const borderStyling = isEmbedded ? "" : "border border-color-primary rounded-rounding-primary border-width-secondary";
-  const paddingStyling = isEmbedded ? "" : "p-4"
+  const borderStyling = isEmbedded
+    ? ""
+    : "border border-color-primary rounded-rounding-primary border-width-secondary";
+  const paddingStyling = isEmbedded ? "" : "p-4";
 
   const alignmentMap = {
     left: "text-left justify-start",
@@ -28,26 +31,31 @@ const Table = <T,>({
 
   const layoutClass = useFixedLayout ? "table-fixed" : "table-auto";
 
-  const alignmentClass = alignmentMap[alignment as keyof typeof alignmentMap] || alignmentMap.center;
+  const alignmentClass =
+    alignmentMap[alignment as keyof typeof alignmentMap] || alignmentMap.center;
 
   return (
-    <div className={`${heightStyling} ${borderStyling} w-full overflow-hidden flex flex-col`}>
+    <div
+      className={`${heightStyling} ${borderStyling} w-full overflow-hidden flex flex-col`}
+    >
       <div className="overflow-y-auto w-full">
         <table className={`w-full ${layoutClass} text-center`}>
-          {showHeaders && <thead className="sticky top-0 bg-accent-color-primary">
-            <tr>
-              {columns.map((col, index) => (
-                <th
-                  key={index}
-                  className={`${paddingStyling} text-title ${alignmentClass} ${showSepLines ? "shadow-[inset_0_-1px_0_0_var(--color-color-primary)]" : ""} ${col.className || ''}`}
-                >
-                  <div className="justify-center items-center">
-                    {col.header}
-                  </div>
-                </th>
-              ))}
-            </tr>
-          </thead>}
+          {showHeaders && (
+            <thead className="sticky top-0 bg-accent-color-primary">
+              <tr>
+                {columns.map((col, index) => (
+                  <th
+                    key={index}
+                    className={`${paddingStyling} text-title ${alignmentClass} ${showSepLines ? "shadow-[inset_0_-1px_0_0_var(--color-color-primary)]" : ""} ${col.className || ""}`}
+                  >
+                    <div className="justify-center items-center">
+                      {col.header}
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+          )}
           <tbody className={`bg-bg-color-primary`}>
             {data.map((item, index) => (
               <>
@@ -57,8 +65,13 @@ const Table = <T,>({
                   className="hover:bg-blue-50/50 transition-colors group cursor-pointer"
                 >
                   {columns.map((col, colIndex) => (
-                    <td key={colIndex} className={`${paddingStyling} ${col.className || ''}`}>
-                      <div className={`items-center ${alignmentClass} h-full w-full`}>
+                    <td
+                      key={colIndex}
+                      className={`${paddingStyling} ${col.className || ""}`}
+                    >
+                      <div
+                        className={`items-center ${alignmentClass} h-full w-full`}
+                      >
                         {col.render(item)}
                       </div>
                     </td>

@@ -13,6 +13,9 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
 import TextBox from "../../components/TextBox";
+import SeparatorLine from "../../components/SeparatorLine";
+import { ComponentOrientation } from "@react-project/shared/components";
+import { SeparatorLineType } from "../../components/SeparatorLine/SeparatorLine.types";
 
 const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
   const { id } = useParams<{ id: string }>();
@@ -90,7 +93,9 @@ const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
   const BlogPostContent = () => {
     return (
       <>
-        <p>{blogPost?.description}</p>
+        <div className="pb-4">
+          <p className="font-bold">{blogPost?.description}</p>
+        </div>
         <div className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1">
           <span className="text-gray-400 text-xs font-medium">
             {t("blog-post.creation-date")}
@@ -110,8 +115,14 @@ const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
           </span>
         </div>
 
+        <SeparatorLine
+          orientation={ComponentOrientation.HORIZONTAL}
+          type={SeparatorLineType.Dotted}
+          className="my-4"
+        />
+
         {MdxComponent && (
-          <div className="space-y-5">
+          <div className="space-y-4">
             <MdxComponent />
           </div>
         )}

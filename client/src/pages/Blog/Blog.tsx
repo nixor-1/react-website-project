@@ -1,9 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
-import BtnBar from "../../components/BtnBar";
 import { useNavigate } from "react-router-dom";
 import { BlogPostProps } from "../BlogPost";
 import { BtnProps } from "../../components/Btn";
-import { ComponentOrientation } from "@react-project/shared/components";
 import { GenericTableColumn } from "../../components/Table/Table.types";
 import Table from "../../components/Table";
 import { useTranslation } from "react-i18next";
