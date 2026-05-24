@@ -65,10 +65,10 @@
       }
     },
     "education": {
-      "title": "MSc | Informationsteknologi",
       "title": "Education",
       "dtu-master": {
-        "university": "Danmarks tekniske universitet (DTU)",
+        "title": "MSc | Computer science and engineering",
+        "university": "Technical university of Denmark (DTU)",
         "items": [
           {
             "listItemLabel": "Data and network security",
@@ -86,7 +86,7 @@
       },
       "dtu-bachelor": {
         "title": "BSc | Software technology",
-        "university": "Danmarks tekniske universitet (DTU)",
+        "university": "Technical university of Denmark (DTU)",
         "items": [
           {
             "listItemLabel": "Programming",
@@ -125,7 +125,27 @@
         ]
       }
     },
-    "projects": "Projects",
+    "projects": {
+      "title": "Projekter",
+      "items": [
+        {
+          "title": "Personal website",
+          "text-body": "Developed a personal website using the following tech stack: React, TypeScript, Vite, Prisma, Redux, Tailwind. The code resides in a public repo on my GitHub page."
+        },
+        {
+          "title": "Master's thesis",
+          "text-body": "Implemented the MADDPG reinforcement learning algorithm and logic tensor networks in Python. Several machine learning libraries were used: PyTorch, PettingZoo, Gymnasium, etc."
+        },
+        {
+          "title": "Multi-agent systems",
+          "text-body": "Implemented collaborative, intelligent agents in Java at my university. My team won an award for a top-10 finish in the final competition."
+        },
+        {
+          "title": "Android app",
+          "text-body": "Created an Android app during my studies with Java and Kotlin. Component development and prototyping was performed in Figma."
+        }
+      ]
+    },
     "passions-and-hobbies": "Passions and hobbies",
     "contact-info": {
       "contact-info-title": "Contact information"

@@ -2,7 +2,6 @@ import { ComponentOrientation } from "@react-project/shared/components";
 import Icon from "../../components/Icon";
 import SeparatorLine from "../../components/SeparatorLine";
 import { SeparatorLineType } from "../../components/SeparatorLine/SeparatorLine.types";
-import Callout from "../../components/Callout";
 import List from "../../components/List";
 import { useTranslation } from "react-i18next";
 
@@ -24,9 +23,6 @@ const WorkExperienceBody = () => {
 
   return (
     <div className="flex flex-col">
-      {/* <Callout */}
-      {/*   title={ */}
-
       <div className="flex flex-col">
         <h2 className="text-title-secondary">
           {t("about-page.work-experience.kintella.role")}
@@ -39,14 +35,11 @@ const WorkExperienceBody = () => {
 
       <List listItems={kintellaItems} />
 
-      {/* </Callout> */}
       <SeparatorLine
         orientation={ComponentOrientation.HORIZONTAL}
         type={SeparatorLineType.Dotted}
         className="my-4"
       />
-      {/* <Callout */}
-      {/*   title={ */}
       <div className="flex flex-col">
         <h2 className="text-title-secondary">
           {t("about-page.work-experience.netcompany.role")}
@@ -58,7 +51,6 @@ const WorkExperienceBody = () => {
       </div>
 
       <List listItems={netcompanyItems} />
-      {/* </Callout> */}
     </div>
   );
 };

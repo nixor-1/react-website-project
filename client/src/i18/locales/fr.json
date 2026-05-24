@@ -28,104 +28,124 @@
     "work-experience": {
       "title": "Expérience professionelle",
       "kintella": {
-        "role": "Full stack developer",
+        "role": "Développeur full stack",
         "company": "Kintella",
         "items": [
           {
-            "listItemLabel": "System integrations",
-            "listItemBody": "Implemented integrations with existing health platforms."
+            "listItemLabel": "Intégrations de systèmes",
+            "listItemBody": "Mise en place d'intégrations avec des plateformes de santé existantes."
           },
           {
             "listItemLabel": "Notifications",
-            "listItemBody": "Implemented a cross-platform notifications with Firebase Cloud Messaging."
+            "listItemBody": "Mise en place d'un système de notifications multiplateforme avec Firebase Cloud Messaging."
           },
           {
-            "listItemLabel": "GraphQL architecture",
-            "listItemBody": "Designed and implemented the GraphQL API layer, schemas, efficient server-side resolvers, and optimized client-side queries for performance."
+            "listItemLabel": "Architecture GraphQL",
+            "listItemBody": "Conception et mise en œuvre de la couche API GraphQL, des schémas, de résolveurs côté serveur efficaces et de requêtes côté client optimisées pour la performance."
           },
           {
-            "listItemLabel": "Full-cycle feature development",
-            "listItemBody": "Implemented new features from initial concept and database design through to implementation."
+            "listItemLabel": "Développement de fonctionnalités de bout en bout",
+            "listItemBody": "Mise en œuvre de nouvelles fonctionnalités, de la conception initiale et de la conception de la base de données jusqu'à la mise en œuvre."
           }
         ]
       },
       "netcompany": {
-        "role": "Frontend developer",
+        "role": "Développeur front-end",
         "company": "Netcompany",
         "items": [
           {
-            "listItemLabel": "Frontend development",
-            "listItemBody": "Built and maintained responsive user interfaces using React and TypeScript."
+            "listItemLabel": "Développement front-end",
+            "listItemBody": "Conception et maintenance d'interfaces utilisateur réactives à l'aide de React et TypeScript."
           },
           {
-            "listItemLabel": "Workflow management",
-            "listItemBody": "Utilized Azure DevOps to track sprint progress, manage backlogs, and ensure timely delivery of assigned tasks."
+            "listItemLabel": "Gestion des workflows",
+            "listItemBody": "Utilisation d'Azure DevOps pour suivre la progression des sprints, gérer les backlogs et garantir la livraison dans les délais des tâches assignées."
           }
         ]
       }
     },
     "education": { 
-      "title": "MSc | Informationsteknologi",
       "title": "Éducation",
       "dtu-master": {
-        "university": "Danmarks tekniske universitet (DTU)",
+        "title": "MSc | Technologies de l'information",
+        "university": "Université technique du Danemark (DTU)",
         "items": [
           {
-            "listItemLabel": "Data and network security",
-            "listItemBody": "Learned a great deal about data security as well as how these concepts are used to protect data in networks. Examples of this involve encryption, network protocols, the OSI data model."
+            "listItemLabel": "Sécurité des données et des réseaux",
+            "listItemBody": "J'ai beaucoup appris sur la sécurité des données ainsi que sur la manière dont ces concepts sont utilisés pour protéger les données dans les réseaux. Cela concerne notamment le chiffrement, les protocoles réseau et le modèle de données OSI."
           },
           {
-            "listItemLabel": "Artificial intelligence",
-            "listItemBody": "Took many courses in artificial intelligence and completed my master's degree with a project centered on reinforcement learning. Learned about deep learning, neural networks, machine learning, Bayesian machine learning, computer vision, and more."
+            "listItemLabel": "Intelligence artificielle",
+            "listItemBody": "J'ai suivi de nombreux cours en intelligence artificielle et j'ai obtenu mon master avec un projet axé sur l'apprentissage par renforcement. J'ai acquis des connaissances sur l'apprentissage profond, les réseaux neuronaux, l'apprentissage automatique, l'apprentissage automatique bayésien, la vision par ordinateur, et bien plus encore."
           },
           {
-            "listItemLabel": "Master's thesis",
-            "listItemBody": "Learned to work almost completely unsupervised and autonomously for a complete semester under the supervision of Nina Gierasimczuk, an associate professor at DTU. Implemented and augmented a reinforcement learning algorithm with logic tensor networks. For more information, refer to the projects section."
+            "listItemLabel": "Mémoire de master",
+            "listItemBody": "J'ai appris à travailler de manière quasi entièrement autonome et sans supervision pendant un semestre complet sous la direction de Nina Gierasimczuk, professeure associée à l'Université technique du Danemark (DTU). J'ai mis en œuvre et amélioré un algorithme d'apprentissage par renforcement à l'aide de réseaux de tenseurs logiques. Pour plus d'informations, consultez la section « Projets »."
           }
         ]
       },
       "dtu-bachelor": {
-        "title": "BSc | Softwareteknologi",
-        "university": "Danmarks tekniske universitet (DTU)",
+        "title": "BSc | Technologie logicielle",
+        "university": "Université technique du Danemark (DTU)",
         "items": [
           {
-            "listItemLabel": "Programming",
-            "listItemBody": "Learned to program in various languages (e.g., Java, C, and F#). Also learned a great deal about object-oriented and functional Programming."
+            "listItemLabel": "Programmation",
+            "listItemBody": "J'ai appris à programmer dans divers langages (par exemple, Java, C et F#). J'ai également beaucoup appris sur la programmation orientée objet et la programmation fonctionnelle."
           },
           {
-            "listItemLabel": "Software tools",
-            "listItemBody": "Learned about varius essential software tools such as Git, GitHub, code editors, and IDEs."
+            "listItemLabel": "Outils logiciels",
+            "listItemBody": "J'ai découvert divers outils logiciels essentiels tels que Git, GitHub, les éditeurs de code et les IDE."
           },
           {
-            "listItemLabel": "Computer architecture",
-            "listItemBody": "Learned about CPUs, compilers, assembly, machine code instructions, and how computers work at the fundamental level."
+            "listItemLabel": "Architecture informatique",
+            "listItemBody": "J'ai acquis des connaissances sur les processeurs, les compilateurs, l'assemblage, les instructions en code machine et le fonctionnement des ordinateurs au niveau fondamental."
           },
           {
-            "listItemLabel": "Collaborative projects",
-            "listItemBody": "Worked in many projects, most of them involving programming, and learned to efficiently collaborate with others using software tools."
+            "listItemLabel": "Projets collaboratifs",
+            "listItemBody": "J'ai travaillé sur de nombreux projets, dont la plupart impliquaient de la programmation, et j'ai appris à collaborer efficacement avec d'autres personnes à l'aide d'outils logiciels."
           },
           {
-            "listItemLabel": "Algorithms and data structures",
-            "listItemBody": "Learned about essential algorithms and data structures, as well as how to analyze them."
+            "listItemLabel": "Algorithmes et structures de données",
+            "listItemBody": "J'ai étudié les algorithmes et les structures de données essentiels, ainsi que la manière de les analyser."
           }
         ]
       },
       "epfl-bachelor": {
         "title": "BSc | Semestre d'échange",
-        "university": "Swiss federal institute of technology in Lausanne (EPFL)",
+        "university": "École polytechnique fédérale de Lausanne (EPFL)",
         "items": [
           {
-            "listItemLabel": "High-performance computing systems",
-            "listItemBody": "Learned about the achitecture and security of high-performance computing systems."
+            "listItemLabel": "Systèmes de calcul haute performance",
+            "listItemBody": "J'ai étudié l'architecture et la sécurité des systèmes de calcul haute performance."
           },
           {
-            "listItemLabel": "Cultural flexibility",
-            "listItemBody": "Learned about and adapted to cultural differences across national border, both inside and outside the university."
+            "listItemLabel": "Flexibilité culturelle",
+            "listItemBody": "Découverte et adaptation aux différences culturelles au-delà des frontières nationales, tant au sein de l'université qu'à l'extérieur."
           }
         ]
       }
     },
-    "projects": "Projets",
+    "projects": {
+      "title": "Projets",
+      "items": [
+        {
+          "title": "Site web personnel",
+          "text-body": "Développement d'un site web personnel à l'aide de la pile technologique suivante : React, TypeScript, Vite, Prisma, Redux, Tailwind. Le code est disponible dans un dépôt public sur ma page GitHub."
+        },
+        {
+          "title": "Mémoire de master",
+          "text-body": "J'ai implémenté l'algorithme d'apprentissage par renforcement MADDPG et des réseaux de tenseurs logiques en Python. Plusieurs bibliothèques d'apprentissage automatique ont été utilisées : PyTorch, PettingZoo, Gymnasium, etc."
+        },
+        {
+          "title": "Systèmes multi-agents",
+          "text-body": "J'ai implémenté des agents intelligents coopératifs en Java à l'université. Mon équipe a remporté un prix pour s'être classée dans le top 10 lors de la compétition finale."
+        },
+        {
+          "title": "Application Android",
+          "text-body": "J'ai créé une application Android pendant mes études à l'aide de Java et de Kotlin. Le développement des composants et le prototypage ont été réalisés dans Figma."
+        }
+      ]
+    },
     "passions-and-hobbies": "Passions et loisirs",
     "contact-info": {
       "contact-info-title": "Information de contact"

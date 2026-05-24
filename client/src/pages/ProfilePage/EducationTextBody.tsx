@@ -29,11 +29,11 @@ const EducationTextBody = () => {
     <div className="flex flex-col">
       <div className="flex flex-col">
         <h2 className="text-title-secondary">
-          Computer science and engineering
+          {t("about-page.education.dtu-master.title")}
         </h2>
         <div className="flex flex-row items-center gap-2">
           <Icon iconName="location" />
-          <p>Technical University of Denmark (DTU)</p>
+          <p>{t("about-page.education.dtu-master.university")}</p>
         </div>
       </div>
 
@@ -46,10 +46,12 @@ const EducationTextBody = () => {
       />
 
       <div className="flex flex-col">
-        <h2 className="text-title-secondary">BSc | Software technology</h2>
+        <h2 className="text-title-secondary">
+          {t("about-page.education.dtu-bachelor.title")}
+        </h2>
         <div className="flex flex-row items-center gap-2">
           <Icon iconName="location" />
-          <p>Technical University of Denmark (DTU)</p>
+          <p>{t("about-page.education.dtu-bachelor.university")}</p>
         </div>
       </div>
 
@@ -62,10 +64,12 @@ const EducationTextBody = () => {
       />
 
       <div className="flex flex-col">
-        <h2 className="text-title-secondary">BSc | Study exchange</h2>
+        <h2 className="text-title-secondary">
+          {t("about-page.education.epfl-bachelor.title")}
+        </h2>
         <div className="flex flex-row items-center gap-2">
           <Icon iconName="location" />
-          <p>Swiss Federal Institute of Technology in Lausanne (EPFL)</p>
+          <p>{t("about-page.education.epfl-bachelor.university")}</p>
         </div>
       </div>
 

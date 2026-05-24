@@ -125,7 +125,27 @@
         ]
       }
     },
-    "projects": "Projekter",
+    "projects": {
+      "title": "Projekter",
+      "items": [
+        {
+          "title": "Personlig hjemmeside",
+          "text-body": "Udviklet en personlig hjemmeside ved hjælp af følgende tech-stack: React, TypeScript, Vite, Prisma, Redux, Tailwind. Koden ligger i et offentligt depot på min GitHub-side."
+        },
+        {
+          "title": "Speciale",
+          "text-body": "Implementerede MADDPG reinforcement learning-algoritmen og logiske tensor-netværk i Python. Der blev anvendt flere maskinlæringsbiblioteker: PyTorch, PettingZoo, Gymnasium osv."
+        },
+        {
+          "title": "Multi-agent systemer",
+          "text-body": "Implementerede samarbejdende, intelligente agenter i Java på mit universitet. Mit team vandt en pris for en top-10 placering i den endelige konkurrence."
+        },
+        {
+          "title": "Android app",
+          "text-body": "Skabte en Android-app under mine studier med Java og Kotlin. Komponentudvikling og prototyping blev udført i Figma."
+        }
+      ]
+    },
     "passions-and-hobbies": "Interesser og hobbyer",
     "contact-info": {
       "contact-info-title": "Kontaktinformation"
