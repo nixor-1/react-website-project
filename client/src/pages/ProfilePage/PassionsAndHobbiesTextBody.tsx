@@ -1,53 +1,39 @@
 import { ComponentOrientation } from "@react-project/shared/components";
-import ProfilePageTextBoxSegment from "../../components/ProfilePageTextBoxSegment";
 import SeparatorLine from "../../components/SeparatorLine";
 import { SeparatorLineType } from "../../components/SeparatorLine/SeparatorLine.types";
+import { useTranslation } from "react-i18next";
+import { Fragment } from "react/jsx-runtime";
+
+interface PassionItem {
+  title: string;
+  "text-body": string;
+}
 
 const PassionsAndHobbiesTextBody = () => {
+  const { t } = useTranslation();
+
+  const passions = t("about-page.passions-and-hobbies.items", {
+    returnObjects: true,
+  }) as PassionItem[];
+
   return (
     <div className="flex flex-col">
-      <h2 className="text-title-secondary">Bodybuilding</h2>
-      <p>I regularly lift weights to keep myself in a healthy condition.</p>
+      {passions.map((passion, index) => (
+        <Fragment key={index}>
+          <div className="flex flex-col">
+            <h2 className="text-title-secondary">{passion.title}</h2>
+            <p>{passion["text-body"]}</p>
+          </div>
 
-      <SeparatorLine
-        orientation={ComponentOrientation.HORIZONTAL}
-        type={SeparatorLineType.Dotted}
-        className="my-2"
-      />
-
-      <h2 className="text-title-secondary">Running</h2>
-      <p>
-        Running soothes my mind whenever life throws obstacles my way. I also
-        commit myself to the activity to keep my body in a healthy condition.
-      </p>
-
-      <SeparatorLine
-        orientation={ComponentOrientation.HORIZONTAL}
-        type={SeparatorLineType.Dotted}
-        className="my-2"
-      />
-
-      <h2 className="text-title-secondary">Notetaking</h2>
-      <p>
-        I have made it a hobby to take notes whenever I read and learn about
-        important and interesting subjects. I considure it a leisurely activity
-        and am passionate about designing my notes such that they capture the
-        fundamentals of whatever I learn.
-      </p>
-
-      <SeparatorLine
-        orientation={ComponentOrientation.HORIZONTAL}
-        type={SeparatorLineType.Dotted}
-        className="my-2"
-      />
-
-      <h2 className="text-title-secondary">Artificial intelligence</h2>
-      <p>
-        I am very passionate about artificial intelligence, especially
-        reinforcement learning, and neuro-symbolic artificial intelligence. I
-        like to learn about related subjects in my free time whenever time
-        permits.
-      </p>
+          {index < passions.length - 1 && (
+            <SeparatorLine
+              orientation={ComponentOrientation.HORIZONTAL}
+              type={SeparatorLineType.Dotted}
+              className="my-4"
+            />
+          )}
+        </Fragment>
+      ))}
     </div>
   );
 };

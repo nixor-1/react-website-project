@@ -126,7 +126,7 @@
       }
     },
     "projects": {
-      "title": "Projekter",
+      "title": "Projects",
       "items": [
         {
           "title": "Personal website",
@@ -146,7 +146,27 @@
         }
       ]
     },
-    "passions-and-hobbies": "Passions and hobbies",
+    "passions-and-hobbies": {
+      "title": "Passions and hobbies",
+      "items": [
+        {
+          "title": "Bodybuilding",
+          "text-body": "I regularly lift weights to keep myself in a healthy condition."
+        },
+        {
+          "title": "Running",
+          "text-body": "Running soothes my mind whenever life throws obstacles my way. I also commit myself to the activity to keep my body in a healthy condition."
+        },
+        {
+          "title": "Notetaking",
+          "text-body": "I have made it a hobby to take notes whenever I read and learn about important and interesting subjects. I considure it a leisurely activity and am passionate about designing my notes such that they capture the fundamentals of whatever I learn."
+        },
+        {
+          "title": "Artifical intelligence",
+          "text-body": "I am very passionate about artificial intelligence, especially reinforcement learning, and neuro-symbolic artificial intelligence. I like to learn about related subjects in my free time whenever time permits."
+        }
+      ]
+    },
     "contact-info": {
       "contact-info-title": "Contact information"
     },

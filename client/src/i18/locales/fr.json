@@ -146,7 +146,27 @@
         }
       ]
     },
-    "passions-and-hobbies": "Passions et loisirs",
+    "passions-and-hobbies": {
+      "title": "Passions et loisirs",
+      "items": [
+        {
+          "title": "Musculation",
+          "text-body": "Je fais régulièrement de la musculation pour rester en bonne santé."
+        },
+        {
+          "title": "La course à pied",
+          "text-body": "La course à pied m'aide à me détendre chaque fois que la vie me met des bâtons dans les roues. Je m'y consacre également pour rester en bonne forme physique."
+        },
+        {
+          "title": "Prise de notes",
+          "text-body": "Je me suis donné pour passe-temps de prendre des notes chaque fois que je lis ou que j'étudie des sujets importants et intéressants. Je considère cela comme une activité de détente et je me passionne pour la mise en page de mes notes, afin qu'elles reflètent l'essentiel de ce que j'apprends."
+        },
+        {
+          "title": "Intelligence artificielle",
+          "text-body": "Je suis passionné par l'intelligence artificielle, en particulier l'apprentissage par renforcement et l'intelligence artificielle neurosymbolique. J'aime me documenter sur ces sujets pendant mon temps libre, dès que j'en ai l'occasion."
+        }
+      ]
+    },
     "contact-info": {
       "contact-info-title": "Information de contact"
     },

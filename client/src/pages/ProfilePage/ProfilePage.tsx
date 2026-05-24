@@ -55,7 +55,7 @@ const ScrollPage = () => {
     },
     {
       iconName: "flame",
-      btnText: t("about-page.passions-and-hobbies"),
+      btnText: t("about-page.passions-and-hobbies.title"),
       onClick: () => scrollToSection("passions-and-hobbies"),
     },
   ];
@@ -90,20 +90,6 @@ const ScrollPage = () => {
         />
       </div>
 
-      {/* <div className="pb-6"> */}
-      {/*   <TextBox */}
-      {/*     textBoxTitle="PDF-dokument med mit CV" */}
-      {/*     textBoxContent={ */}
-      {/*       <p> */}
-      {/*         Du kan tilgå et PDF-dokument med mit CV i browseren ved at klikke{" "} */}
-      {/*         <ViewPdfDocumentBtn />, eller downloade det ved at klikke{" "} */}
-      {/*         <DownloadPdfDocumentBtn />. */}
-      {/*       </p> */}
-      {/*     } */}
-      {/*     iconName="user" */}
-      {/*   /> */}
-      {/* </div> */}
-
       <div className="pb-6">
         <TextBox
           textBoxTitle={t("about-page.pdf-document.title")}
@@ -116,7 +102,6 @@ const ScrollPage = () => {
                   <Btn
                     href="/cv-engelsk.pdf"
                     download="Nick_Jorgensen_Resume.pdf"
-                    // btnText="her"
                   >
                     {""}
                   </Btn>,
@@ -124,7 +109,6 @@ const ScrollPage = () => {
                     href="/cv-engelsk.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    // btnText="her"
                   >
                     {""}
                   </Btn>,
@@ -163,7 +147,7 @@ const ScrollPage = () => {
 
           <div id="passions-and-hobbies">
             <TextBox
-              textBoxTitle={t("about-page.passions-and-hobbies")}
+              textBoxTitle={t("about-page.passions-and-hobbies.title")}
               textBoxContent={<PassionsAndHobbiesTextBody />}
               iconName="flame"
             />

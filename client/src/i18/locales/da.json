@@ -71,16 +71,16 @@
         "university": "Danmarks tekniske universitet (DTU)",
         "items": [
           {
-            "listItemLabel": "Data and network security",
-            "listItemBody": "Learned a great deal about data security as well as how these concepts are used to protect data in networks. Examples of this involve encryption, network protocols, the OSI data model."
+            "listItemLabel": "Data- og netværkssikkerhed",
+            "listItemBody": "Jeg har lært en masse om datasikkerhed og om, hvordan disse begreber bruges til at beskytte data i netværk. Eksempler herpå er kryptering, netværksprotokoller og OSI-datamodellen."
           },
           {
-            "listItemLabel": "Artificial intelligence",
-            "listItemBody": "Took many courses in artificial intelligence and completed my master's degree with a project centered on reinforcement learning. Learned about deep learning, neural networks, machine learning, Bayesian machine learning, computer vision, and more."
+            "listItemLabel": "Kunstig intelligens",
+            "listItemBody": "Jeg har taget en række kurser i kunstig intelligens og afsluttede min kandidatuddannelse med et projekt, der fokuserede på forstærkningslæring. Jeg har lært om deep learning, neurale netværk, maskinlæring, bayesisk maskinlæring, computervision og meget mere."
           },
           {
-            "listItemLabel": "Master's thesis",
-            "listItemBody": "Learned to work almost completely unsupervised and autonomously for a complete semester under the supervision of Nina Gierasimczuk, an associate professor at DTU. Implemented and augmented a reinforcement learning algorithm with logic tensor networks. For more information, refer to the projects section."
+            "listItemLabel": "Kandidatspeciale",
+            "listItemBody": "Jeg har lært at arbejde næsten fuldstændig uden opsyn og selvstændigt i et helt semester under vejledning af Nina Gierasimczuk, lektor ved DTU. Jeg har implementeret og udvidet en algoritme til forstærkende læring ved hjælp af logiske tensornetværk. Se afsnittet om projekter for yderligere oplysninger."
           }
         ]
       },
@@ -89,38 +89,38 @@
         "university": "Danmarks tekniske universitet (DTU)",
         "items": [
           {
-            "listItemLabel": "Programming",
-            "listItemBody": "Learned to program in various languages (e.g., Java, C, and F#). Also learned a great deal about object-oriented and functional Programming."
+            "listItemLabel": "Programmering",
+            "listItemBody": "Jeg har lært at programmere i forskellige sprog (f.eks. Java, C og F#). Desuden har jeg tilegnet mig en stor viden om objektorienteret og funktionel programmering."
           },
           {
-            "listItemLabel": "Software tools",
-            "listItemBody": "Learned about varius essential software tools such as Git, GitHub, code editors, and IDEs."
+            "listItemLabel": "Udviklingsværktøjer",
+            "listItemBody": "Jeg har lært om forskellige vigtige softwareværktøjer såsom Git, GitHub, kodeeditorer og IDE'er."
           },
           {
-            "listItemLabel": "Computer architecture",
-            "listItemBody": "Learned about CPUs, compilers, assembly, machine code instructions, and how computers work at the fundamental level."
+            "listItemLabel": "Computerarkitektur",
+            "listItemBody": "Jeg har lært om CPU'er, kompilatorer, assembler, maskinkodekommandoer og hvordan computere fungerer på det grundlæggende niveau."
           },
           {
-            "listItemLabel": "Collaborative projects",
-            "listItemBody": "Worked in many projects, most of them involving programming, and learned to efficiently collaborate with others using software tools."
+            "listItemLabel": "Projektarbejde",
+            "listItemBody": "Har arbejdet på mange projekter, hvoraf de fleste har involveret programmering, og har lært at samarbejde effektivt med andre ved hjælp af softwareværktøjer."
           },
           {
-            "listItemLabel": "Algorithms and data structures",
-            "listItemBody": "Learned about essential algorithms and data structures, as well as how to analyze them."
+            "listItemLabel": "Algoritmer og datastrukturer",
+            "listItemBody": "Jeg har lært om vigtige algoritmer og datastrukturer samt, hvordan man analyserer dem."
           }
         ]
       },
       "epfl-bachelor": {
         "title": "BSc | Udvekslingssemester",
-        "university": "Swiss federal institute of technology in Lausanne (EPFL)",
+        "university": "École polytechnique fédérale de Lausanne (EPFL)",
         "items": [
           {
-            "listItemLabel": "High-performance computing systems",
-            "listItemBody": "Learned about the achitecture and security of high-performance computing systems."
+            "listItemLabel": "Højtydende computersystemer",
+            "listItemBody": "Har lært om arkitekturen og sikkerheden i højtydende computersystemer."
           },
           {
-            "listItemLabel": "Cultural flexibility",
-            "listItemBody": "Learned about and adapted to cultural differences across national border, both inside and outside the university."
+            "listItemLabel": "Kulturel fleksibilitet",
+            "listItemBody": "Lærte om og tilpassede mig kulturelle forskelle på tværs af landegrænser, både inden for og uden for universitetet."
           }
         ]
       }
@@ -146,7 +146,27 @@
         }
       ]
     },
-    "passions-and-hobbies": "Interesser og hobbyer",
+    "passions-and-hobbies": {
+      "title": "Interesser og hobbyer",
+      "items": [
+        {
+          "title": "Vægttræning",
+          "text-body": "Jeg træner regelmæssigt med vægte for at holde mig i god form."
+        },
+        {
+          "title": "Løb",
+          "text-body": "Løb beroliger mit sind, når livet byder på forhindringer. Jeg dedikerer mig også til aktiviteten for at holde min krop i god form."
+        },
+        {
+          "title": "Noter",
+          "text-body": "Jeg har gjort det til en hobby at tage noter når jeg læser og lærer om vigtige og interessante emner. Jeg betragter det som en afslappende aktivitet og brænder for at designe mine noter så de fanger det væsentlige i det jeg lærer."
+        },
+        {
+          "title": "Kunstig intelligens",
+          "text-body": "Jeg brænder meget for kunstig intelligens, især forstærkningslæring og neurosymbolsk kunstig intelligens. Jeg kan godt lide at lære om relaterede emner i min fritid, når tiden tillader det."
+        }
+      ]
+    },
     "contact-info": {
       "contact-info-title": "Kontaktinformation"
     },
