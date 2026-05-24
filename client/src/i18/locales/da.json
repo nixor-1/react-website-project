@@ -13,8 +13,34 @@
     "mail": "nickjoergensen1@gmail.com"
   },
   "home-page": {
-    "welcome-text-header": "Velkommen til mit digitale univers",
-    "welcome-text-body": "Hvor dejligt at du kiggede forbi. Denne side er skabt som en samlet indgang til hvem jeg er – både når jeg har arbejdstøjet på, og når jeg forfølger mine personlige interesser.\nHer kan du dykke ned i min professionelle rejse og kompetencer, hvis du er her i arbejdsøjemed, eller gå på opdagelse i min blog. På bloggen deler jeg tanker, idéer og emner, som jeg finder inspirerende og værdifulde at dele med omverdenen.\nJeg håber, du finder det, du søger!"
+    "welcome": {
+      "title": "Velkommen!",
+      "text-body": "Velkommen til min hjemmeside! Denne hjemmeside er langt fra færdig på nuværende tidspunkt, men bliver opdateret løbende. Her kan du finde information om mig, min baggrund, mine projekter, m.m. Brug knapperne i den øverste bjælke for at navigere. Her kan du også finde relevante links."
+    },
+    "status": {
+      "title": "Mangler, problemer og fremtidige features",
+      "text-body": {
+        "intro": "Som sagt er hjemmesiden langt fra færdig, og visse mangler, problemer findes derfor. Desuden er der features som jeg endnu ikke har nået at implementere. Nedenstående er en ikke-udtømmende liste over nævnte:",
+        "items": [
+          {
+            "listItemLabel": "Styling og tilpasning af elementer",
+            "listItemBody": "Elementerne på siden tilpasser sig ikke perfekt ved visse skærmdimensioner. I forbindelse hermed er siden heller ikke tilpasset visning på smartphones eller tablets."
+          },
+          {
+            "listItemLabel": "Bloggen",
+            "listItemBody": "Bloggen mangler visse features såsom filter og søgning."
+          },
+          {
+            "listItemLabel": "Design og æstetik",
+            "listItemBody": "Designet er ikke helt finpudset, og kommer til at ændre sig gradvist i fremtiden. Et eksempel herpå er menuen over sprog som ikke på nuværnde ser ud helt som jeg ville ønske."
+          },
+          {
+            "listItemLabel": "Automatisk sprogindstilling",
+            "listItemBody": "I fremtiden ønsker jeg at siden automatisk indstiller sproget til det din browser bruger."
+          }
+        ]
+      }
+    }
   },
   "about-page": {
     "profile": {

@@ -13,8 +13,34 @@
     "mail": "nickjoergensen1@gmail.com"
   },
   "home-page": {
-    "welcome-text-header": "Welcome to my digital universe",
-    "welcome-text-body": "How wonderful that you stopped by. This page has been created as a comprehensive introduction to who I am—both when I'm wearing my work clothes and when I'm pursuing my personal interests.\nHere, you can delve into my professional journey and skills if you are here for work purposes, or explore my blog. On the blog, I share thoughts, ideas, and topics that I find inspiring and valuable to share with the world.\nI hope you find what you are looking for!"
+    "welcome": {
+      "title": "Welcome!",
+      "text-body": "Welcome to my website! This website is far from complete at this point, but it will be updated regularly. Here you can find information about me, my background, my projects, and more. Use the buttons in the top bar to navigate. You can also find relevant links here."
+    },
+    "status": {
+      "title": "Issues, problems, and future features",
+      "text-body": {
+        "intro": "As mentioned, the website is far from complete, so there are still some shortcomings and issues. In addition, there are features that I haven’t had a chance to implement yet. Below is a non-exhaustive list of these:",
+        "items": [
+          {
+            "listItemLabel": "Styling and customization of elements",
+            "listItemBody": "The elements on the page do not adapt perfectly to certain screen sizes. As a result, the page is also not optimized for viewing on smartphones or tablets."
+          },
+          {
+            "listItemLabel": "The blog",
+            "listItemBody": "The blog lacks certain features such as filters and search."
+          },
+          {
+            "listItemLabel": "Design and Aesthetics",
+            "listItemBody": "The design is not fully polished and will change gradually in the future. An example of this is the language menu, which currently does not look exactly as I would like."
+          },
+          {
+            "listItemLabel": "Automatic language setting",
+            "listItemBody": "In the future, I want the site to automatically set the language to the one your browser uses."
+          }
+        ]
+      }
+    }
   },
   "about-page": {
     "profile": {

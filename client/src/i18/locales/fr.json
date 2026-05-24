@@ -13,8 +13,34 @@
     "mail": "nickjoergensen1@gmail.com"
   },
   "home-page": {
-    "welcome-text-header": "Bienvenue dans mon univers numérique",
-    "welcome-text-body": "Merci beaucoup de votre visite. Ce site a été créé pour vous donner un aperçu complet de qui je suis, tant dans ma vie professionnelle que dans mes loisirs.\nSi vous êtes ici pour des raisons professionnelles, vous pouvez découvrir mon parcours professionnel et mes compétences, ou explorer mon blog. Sur mon blog, je partage des réflexions, des idées et des sujets que je trouve inspirants et qui méritent d'être partagés avec le monde extérieur.\nJ'espère que vous trouverez ce que vous cherchez !"
+    "welcome": {
+      "title": "Bienvenue !",
+      "text-body": "Bienvenue sur mon site web ! Ce site est encore loin d'être terminé, mais il est mis à jour régulièrement. Vous y trouverez des informations sur moi, mon parcours, mes projets, etc. Utilisez les boutons de la barre supérieure pour naviguer. Vous y trouverez également des liens utiles."
+    },
+    "status": {
+      "title": "Lacunes, problèmes et fonctionnalités à venir",
+      "text-body": {
+        "intro": "Comme je l'ai dit, le site web est loin d'être terminé, et il comporte donc certaines lacunes et certains problèmes. De plus, il y a des fonctionnalités que je n'ai pas encore eu le temps de mettre en place. Voici une liste non exhaustive de ces éléments :",
+        "items": [
+          {
+            "listItemLabel": "Mise en forme et personnalisation des éléments",
+            "listItemBody": "Les éléments de la page ne s'adaptent pas parfaitement à certaines tailles d'écran. De ce fait, la page n'est pas non plus optimisée pour l'affichage sur les smartphones ou les tablettes."
+          },
+          {
+            "listItemLabel": "Le blog",
+            "listItemBody": "Le blog manque de certaines fonctionnalités telles que le filtrage et la recherche."
+          },
+          {
+            "listItemLabel": "Design et esthétique",
+            "listItemBody": "Le design n'est pas encore tout à fait au point et évoluera progressivement à l'avenir. Par exemple, le menu des langues ne se présente pas actuellement tout à fait comme je le souhaiterais."
+          },
+          {
+            "listItemLabel": "Sélection automatique de la langue",
+            "listItemBody": "À l'avenir, je souhaite que le site sélectionne automatiquement la langue utilisée par votre navigateur."
+          }
+        ]
+      }
+    }
   },
   "about-page": {
     "profile": {
