@@ -1,50 +1,78 @@
-
-import { useState, useEffect } from "react";
-import { BtnBarOrientation } from "../../components/BtnBar";
+import { useState, useEffect, useMemo } from "react";
 import BtnBar from "../../components/BtnBar";
-import Btn from "../../components/Btn";
 import { useNavigate } from "react-router-dom";
 import { BlogPostProps } from "../BlogPost";
-import { useAppSelector } from "../../store/hooks";
 import { BtnProps } from "../../components/Btn";
+import { ComponentOrientation } from "@react-project/shared/components";
+import { GenericTableColumn } from "../../components/Table/Table.types";
+import Table from "../../components/Table";
+import { useTranslation } from "react-i18next";
+import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
+
+interface BlogMetadata {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+}
 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const BlogPost = ({ id, title, description }: BlogPostProps) => {
   return (
-    <div
-      key={id}
-      className="p-1"
-    >
-      <h2 className="text-lg font-semibold text-gray-800 mb-1">
-        {title}
-      </h2>
-      <p className="text-gray-600">
-        {description}
-      </p>
+    <div key={id} className="truncate p-1">
+      <h2 className="text-lg text-color-primary truncate">{title}</h2>
+      <p className="text-base text-color-primary truncate">{description}</p>
     </div>
-  )
-}
-
-const blogPostBtns: BtnProps[] = [
-  {
-    iconName: 'create',
-    btnText: "Create",
-    onClick: () => console.log("Create button not yet implemented."),
-  },
-];
+  );
+};
 
 const Blog = () => {
   const navigate = useNavigate();
   // const blogPosts = useAppSelector((state) => state.blogPosts);
+  const { t, i18n } = useTranslation();
+  const [testPosts, setTestPosts] = useState<BlogMetadata[]>([]);
+  const [mdxLoading, setMdxLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAllMetadata = async () => {
+      try {
+        const articles = import.meta.glob("../../../../content/blogs/**/*.mdx");
+        const resolvedList: BlogMetadata[] = [];
+
+        for (const path in articles) {
+          const slug = path.split("/").pop()?.replace(".mdx", "") || "";
+          const module: any = await articles[path]();
+
+          // Checking safely for frontmatter properties
+          if (module && module.frontmatter) {
+            resolvedList.push({
+              slug,
+              title: module.frontmatter.title || "Untitled",
+              date: module.frontmatter.date || "—",
+              excerpt: module.frontmatter.excerpt || "",
+            });
+          }
+        }
+
+        resolvedList.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+        );
+
+        setTestPosts(resolvedList);
+      } catch (err) {
+        console.error("MDX Parsing Error:", err);
+      } finally {
+        setMdxLoading(false);
+      }
+    };
+
+    fetchAllMetadata();
+  }, []);
 
   const [blogPosts, setPosts] = useState<BlogPostProps[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-
-  // Form State
-  const [newTitle, setNewTitle] = useState("");
-  const [newContent, setNewContent] = useState("");
 
   const fetchPosts = async () => {
     try {
@@ -65,85 +93,125 @@ const Blog = () => {
     fetchPosts();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/posts`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: newTitle,
-          content: newContent,
-          description: "Added via frontend", // Optional description
-        }),
-      });
+  const blogPostBtns = useMemo<BtnProps[]>(
+    () => [
+      {
+        iconName: "create",
+        btnText: "Create",
+        onClick: () => navigate(`/blog/new`),
+      },
+      {
+        iconName: "delete",
+        btnText: "Delete",
+      },
+    ],
+    [],
+  );
 
-      if (!response.ok) throw new Error("Failed to create post");
+  // if (loading) return <p>Loading blog posts...</p>;
 
-      // Refresh the list after successful post
-      setNewTitle("");
-      setNewContent("");
-      await fetchPosts();
-    } catch (err) {
-      alert("Error saving post");
-    }
-  };
+  const columns: GenericTableColumn<BlogPostProps>[] = [
+    {
+      header: t("blog-posts-table.header-title"),
+      className: "w-[50%]",
+      render: (post) => (
+        // <Btn className="w-full overflow-hidden" key={post.id} onClick={() => navigate(`/blog/${post.id}`, { state: post.id as string })}>
+        <BlogPost {...post} />
+      ),
+    },
+    {
+      header: t("blog-posts-table.creation-date"),
+      className: "w-[25%] whitespace-nowrap",
+      render: (post) => (
+        <p className="text-base text-color-primary">
+          {post.createdAt ? new Date(post.createdAt).toLocaleDateString() : "—"}
+        </p>
+      ),
+    },
+    {
+      header: t("blog-posts-table.last-update-date"),
+      className: "w-[25%] whitespace-nowrap",
+      render: (post) => (
+        <p className="text-base text-color-primary">
+          {post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : "—"}
+        </p>
+      ),
+    },
+  ];
 
-  if (loading) return <p>Loading blog posts...</p>;
+  // const oldReturn = () => {
+  //   return (
+  //     <div className="grid grid-rows-[auto_1fr] h-full w-full overflow-hidden">
+  //
+  //       <StatusBar statusBarText="You are currently viewing all blog posts" orientation={ComponentOrientation.HORIZONTAL} />
+  //
+  //       <div className="grid grid-cols-[auto_1fr] overflow-hidden">
+  //
+  //         <aside className="h-full z-10">
+  //           <BtnBar
+  //             orientation={ComponentOrientation.VERTICAL}
+  //             btnConfigs={blogPostBtns}
+  //           />
+  //         </aside>
+  //
+  //         <PageMargins pageMarginsWidth="large" className="overflow-hidden">
+  //           <div className="h-full w-full overflow-hidden">
+  //             <Table
+  //               data={blogPosts}
+  //               columns={columns}
+  //               rowKey={(post) => post.id}
+  //             />
+  //           </div>
+  //         </PageMargins>
+  //
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
-    <>
-      {/* <div> */}
-      {/*   <h1>My Tech Blog</h1> */}
-      {/*   {posts.length === 0 ? ( */}
-      {/*     <p>No posts found. Go add one in DBeaver!</p> */}
-      {/*   ) : ( */}
-      {/*     posts.map(post => ( */}
-      {/*       <article key={post.id} style={{ borderBottom: '1px solid #444', padding: '1rem' }}> */}
-      {/*         <h2>{post.title}</h2> */}
-      {/*         <p>{post.content}</p> */}
-      {/*         <small>Created at: {post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'N/A'}</small> */}
-      {/*       </article> */}
-      {/*     )) */}
-      {/*   )} */}
-      {/* </div> */}
-      <section className="mb-10 bg-gray-100 p-6 rounded-lg">
-        <h2 className="text-xl font-bold mb-4">Create New Post</h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <input
-            className="p-2 border rounded"
-            placeholder="Title"
-            value={newTitle}
-            onChange={(e) => setNewTitle(e.target.value)}
-            required
-          />
-          <textarea
-            className="p-2 border rounded"
-            placeholder="Content"
-            value={newContent}
-            onChange={(e) => setNewContent(e.target.value)}
-            required
-          />
-          <button type="submit" className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
-            Publish Post
-          </button>
-        </form>
-      </section>
-      <div className="flex h-full">
-        <BtnBar orientation={BtnBarOrientation.VERTICAL} btnConfigs={blogPostBtns} />
-        {/* <div className="bg-white rounded-xl shadow-sm p-6"> */}
-        <div className="bg-white p-4 w-full overflow-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Blog Posts</h2>
-          <div className="grid gap-4">
-            {blogPosts.map((post, index) => (
-              <Btn key={index} onClick={() => navigate(`/blog/${post.id}`, { state: post.id as string })}>
-                <BlogPost {...post} />
-              </Btn>
-            ))}
-          </div>
-        </div>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">
+        {t("blog-posts-table.header-title")}
+      </h1>
+      <div className="flex flex-col gap-6">
+        {testPosts.map((post) => (
+          <article key={post.slug} className="border-b pb-4">
+            {/* Direct href link matches your routing logic setup */}
+            <a
+              href={`/blog/${post.slug}`}
+              className="text-xl font-semibold text-blue-600 hover:underline"
+            >
+              {post.title}
+            </a>
+            <p className="text-sm text-gray-400 my-1">{post.date}</p>
+            <p className="text-gray-600">{post.excerpt}</p>
+          </article>
+        ))}
+        {testPosts.length === 0 && (
+          <p>No blog posts found for this language profile.</p>
+        )}
       </div>
-    </>
+    </div>
+  );
+
+  return (
+    <PageMarginsNew
+      pageMarginsWidth="2"
+      leftCol={
+        <BtnBar
+          orientation={ComponentOrientation.VERTICAL}
+          btnConfigs={blogPostBtns}
+        />
+      }
+    >
+      <Table
+        data={blogPosts}
+        columns={columns}
+        rowKey={(post) => post.id}
+        useFixedLayout={true}
+      />
+    </PageMarginsNew>
   );
 };
 
