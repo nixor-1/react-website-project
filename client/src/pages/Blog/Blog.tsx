@@ -17,8 +17,8 @@ interface BlogMetadata {
 const BlogPost = ({ id, title, description }: BlogPostProps) => {
   return (
     <div key={id} className="truncate p-1">
-      <h2 className="text-lg text-color-primary truncate">{title}</h2>
-      <p className="text-base text-color-primary truncate">{description}</p>
+      <h2 className="text-title-secondary truncate">{title}</h2>
+      <p className="text-color-primary truncate">{description}</p>
     </div>
   );
 };
@@ -74,21 +74,6 @@ const Blog = () => {
       updatedAt: post.date !== "—" ? new Date(post.date) : undefined,
     }));
   }, [testPosts]);
-
-  const blogPostBtns = useMemo<BtnProps[]>(
-    () => [
-      {
-        iconName: "create",
-        btnText: "Create",
-        onClick: () => navigate(`/blog/new`),
-      },
-      {
-        iconName: "delete",
-        btnText: "Delete",
-      },
-    ],
-    [],
-  );
 
   const columns: GenericTableColumn<BlogPostProps>[] = [
     {

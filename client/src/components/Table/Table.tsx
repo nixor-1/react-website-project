@@ -49,7 +49,7 @@ const Table = <T,>({
                     className={`${paddingStyling} text-title ${alignmentClass} ${showSepLines ? "shadow-[inset_0_-1px_0_0_var(--color-color-primary)]" : ""} ${col.className || ""}`}
                   >
                     <div className="justify-center items-center">
-                      {col.header}
+                      <p className="text-title-secondary">{col.header}</p>
                     </div>
                   </th>
                 ))}
