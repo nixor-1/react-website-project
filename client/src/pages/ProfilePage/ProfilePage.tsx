@@ -93,7 +93,6 @@ const ScrollPage = () => {
       <div className="pb-6">
         <TextBox
           textBoxTitle={t("about-page.pdf-document.title")}
-          iconName="user"
           textBoxContent={
             <p className="text-color-primary">
               <Trans
