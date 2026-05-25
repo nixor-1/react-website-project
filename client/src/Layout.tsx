@@ -6,6 +6,7 @@ import { ComponentOrientation } from "@react-project/shared/components";
 import Btn from "./components/Btn";
 import DropdownMenu from "./components/DropdownMenu";
 import { useEffect, useState } from "react";
+import TextBox from "./components/TextBox";
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -93,13 +94,17 @@ const Layout = () => {
         />
       </div>
 
-      <main className="row-start-2 h-full overflow-y-auto flex flex-col justify-between">
+      <main className="items-center row-start-2 h-full overflow-y-auto flex flex-col justify-between">
         <div className="flex-grow">
           <Outlet />
         </div>
 
-        <footer className="w-full text-center">
-          <p>{t("copyright-message")}</p>
+        <footer className="text-center pb-6">
+          <TextBox
+            textBoxContent={
+              <p className="text-gray-500">{t("copyright-message")}</p>
+            }
+          />
         </footer>
       </main>
 
