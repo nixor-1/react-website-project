@@ -1,6 +1,6 @@
 import { BtnProps } from "./components/Btn/Btn.types";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import ComponentBar from "./components/ComponentBar";
 import { ComponentOrientation } from "@react-project/shared/components";
 import Btn from "./components/Btn";
@@ -15,61 +15,73 @@ const Layout = () => {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
   const dropdownMenuItems: BtnProps[] = [
-    { onClick: () => i18n.changeLanguage('en'), btnText: "English", hasShadow: false },
-    { onClick: () => i18n.changeLanguage('da'), btnText: "Dansk", hasShadow: false },
-    { onClick: () => i18n.changeLanguage('fr'), btnText: "Français", hasShadow: false },
-  ]
+    {
+      onClick: () => i18n.changeLanguage("en"),
+      btnText: "English",
+      hasShadow: false,
+    },
+    {
+      onClick: () => i18n.changeLanguage("da"),
+      btnText: "Dansk",
+      hasShadow: false,
+    },
+    {
+      onClick: () => i18n.changeLanguage("fr"),
+      btnText: "Français",
+      hasShadow: false,
+    },
+  ];
 
   const navBtnsTest = [
     <Btn
-      iconName='home'
-      btnText={t('nav-bar.home')}
-      onClick={() => navigate('/home')}
+      iconName="home"
+      btnText={t("nav-bar.home")}
+      onClick={() => navigate("/home")}
     />,
     <Btn
-      iconName='rss'
-      btnText={t('nav-bar.blog')}
-      onClick={() => navigate('/blog')}
+      iconName="rss"
+      btnText={t("nav-bar.blog")}
+      onClick={() => navigate("/blog")}
     />,
     <Btn
-      iconName='user'
-      btnText={t('nav-bar.cv')}
-      onClick={() => navigate('/about')}
+      iconName="user"
+      btnText={t("nav-bar.cv")}
+      onClick={() => navigate("/about")}
     />,
     <DropdownMenu
-      dropdownMenuIconName='earth'
-      dropdownMenuLabel={t('nav-bar.lang')}
+      dropdownMenuIconName="earth"
+      dropdownMenuLabel={t("nav-bar.lang")}
       dropdownMenuItems={dropdownMenuItems}
     />,
     <Btn
-      iconName={isDarkMode ? 'moon' : 'sun'}
-      btnText={isDarkMode ? t('settings.dark-mode') : t('settings.light-mode')}
-      onClick={() => setIsDarkMode(prev => !prev)}
+      iconName={isDarkMode ? "moon" : "sun"}
+      btnText={isDarkMode ? t("settings.dark-mode") : t("settings.light-mode")}
+      onClick={() => setIsDarkMode((prev) => !prev)}
     />,
     <div className="flex-grow" key="spacer-1" />,
     <Btn
-      iconName='mail'
-      btnText={t('contact-info.mail')}
-      href='mailto:nickjoergensen1@gmail.com'
+      iconName="mail"
+      btnText={t("contact-info.mail")}
+      href="mailto:nickjoergensen1@gmail.com"
     />,
     <Btn
-      iconName='linkedin'
-      btnText={t('socials.linkedin')}
-      href='https://www.linkedin.com/in/nick-j%C3%B8rgensen-22735293/'
+      iconName="linkedin"
+      btnText={t("socials.linkedin")}
+      href="https://www.linkedin.com/in/nick-j%C3%B8rgensen-22735293/"
     />,
     <Btn
-      iconName='github'
-      btnText={t('socials.github')}
-      href='https://github.com/nixor-1'
+      iconName="github"
+      btnText={t("socials.github")}
+      href="https://github.com/nixor-1"
     />,
-  ]
+  ];
 
   return (
     <div className="w-screen h-screen grid grid-cols-1 grid-rows-[auto_1fr] overflow-hidden">
@@ -81,11 +93,21 @@ const Layout = () => {
         />
       </div>
 
-      <div className="row-start-2 h-full overflow-hidden">
-        <Outlet />
-      </div>
-    </div>
-  )
-}
+      <main className="row-start-2 h-full overflow-y-auto flex flex-col justify-between">
+        <div className="flex-grow">
+          <Outlet />
+        </div>
 
-export default Layout
+        <footer className="w-full text-center">
+          <p>{t("copyright-message")}</p>
+        </footer>
+      </main>
+
+      {/* <div className="row-start-2 h-full overflow-hidden"> */}
+      {/*   <Outlet /> */}
+      {/* </div> */}
+    </div>
+  );
+};
+
+export default Layout;
