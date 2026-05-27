@@ -1,5 +1,11 @@
 import { BtnProps } from "./components/Btn/Btn.types";
-import { useLocation, useNavigate, Outlet } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  Outlet,
+  useParams,
+  generatePath,
+} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ComponentBar from "./components/ComponentBar";
 import { ComponentOrientation } from "@react-project/shared/components";
@@ -9,10 +15,33 @@ import { useEffect, useState } from "react";
 import TextBox from "./components/TextBox";
 
 const Layout = () => {
+  const { lang } = useParams<{ lang: string }>();
   const navigate = useNavigate();
   const location = useLocation();
   const { t, i18n } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const supportedLangs = ["en", "da", "fr"];
+
+  useEffect(() => {
+    // Default to English if the language is unsupported.
+    if (!lang || !supportedLangs.includes(lang)) {
+      navigate("/en/home", { replace: true });
+      return;
+    }
+
+    if (i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang, i18n, navigate]);
+
+  const changeLangUrl = (newLang: string) => {
+    const pathSegments = location.pathname.split("/");
+
+    pathSegments[1] = newLang;
+
+    navigate(pathSegments.join("/"));
+  };
 
   useEffect(() => {
     if (isDarkMode) {
@@ -24,17 +53,20 @@ const Layout = () => {
 
   const dropdownMenuItems: BtnProps[] = [
     {
-      onClick: () => i18n.changeLanguage("en"),
+      // onClick: () => i18n.changeLanguage("en"),
+      onClick: () => changeLangUrl("en"),
       btnText: "English",
       hasShadow: false,
     },
     {
-      onClick: () => i18n.changeLanguage("da"),
+      // onClick: () => i18n.changeLanguage("da"),
+      onClick: () => changeLangUrl("da"),
       btnText: "Dansk",
       hasShadow: false,
     },
     {
-      onClick: () => i18n.changeLanguage("fr"),
+      // onClick: () => i18n.changeLanguage("fr"),
+      onClick: () => changeLangUrl("fr"),
       btnText: "Français",
       hasShadow: false,
     },
@@ -44,17 +76,17 @@ const Layout = () => {
     <Btn
       iconName="home"
       btnText={t("nav-bar.home")}
-      onClick={() => navigate("/home")}
+      onClick={() => navigate("home")}
     />,
     <Btn
       iconName="rss"
       btnText={t("nav-bar.blog")}
-      onClick={() => navigate("/blog")}
+      onClick={() => navigate("blog")}
     />,
     <Btn
       iconName="user"
       btnText={t("nav-bar.cv")}
-      onClick={() => navigate("/about")}
+      onClick={() => navigate("about")}
     />,
     <DropdownMenu
       dropdownMenuIconName="earth"

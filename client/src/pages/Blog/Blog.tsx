@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogPostProps } from "../BlogPost";
-import { BtnProps } from "../../components/Btn";
 import { GenericTableColumn } from "../../components/Table/Table.types";
 import Table from "../../components/Table";
 import { useTranslation } from "react-i18next";
@@ -119,7 +118,7 @@ const Blog = () => {
         columns={columns}
         rowKey={(post) => post.id}
         useFixedLayout={true}
-        onRowClick={(post) => navigate(`/blog/${post.id}`)}
+        onRowClick={(post) => navigate(`${post.id}`)}
       />
     </PageMarginsNew>
   );

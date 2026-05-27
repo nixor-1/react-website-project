@@ -1,15 +1,6 @@
 import { useParams } from "react-router-dom";
-import {
-  BlogPostBodyElementType,
-  BlogPostFormData,
-  BlogPostFormErrors,
-  BlogPostFormFields,
-  BlogPostProps,
-} from "./BlogPost.types";
+import { BlogPostProps } from "./BlogPost.types";
 import { useState, useEffect } from "react";
-import { BlogPostMode } from "./BlogPost.types";
-import BlogPostBodyElement from "./BlogPostBody";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
 import TextBox from "../../components/TextBox";
@@ -19,7 +10,7 @@ import { SeparatorLineType } from "../../components/SeparatorLine/SeparatorLine.
 
 const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
   const { id } = useParams<{ id: string }>();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [blogPost, setBlogPost] = useState<BlogPostProps>();
 

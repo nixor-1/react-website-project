@@ -17,19 +17,19 @@ import "./i18";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/:lang",
     element: <Layout />,
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="home" replace />,
       },
       {
-        path: "/home",
+        path: "home",
         element: <HomePage />,
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog />,
       },
       {
@@ -45,6 +45,14 @@ const router = createBrowserRouter([
         element: <ProfilePage />,
       },
     ],
+  },
+  {
+    path: "/",
+    element: <Navigate to="/en/home" replace />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/en/home" replace />,
   },
 ]);
 
