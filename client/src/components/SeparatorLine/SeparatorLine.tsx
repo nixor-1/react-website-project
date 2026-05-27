@@ -4,14 +4,17 @@ import { SeparatorlineProps, SeparatorLineType } from "./SeparatorLine.types";
 const SeparatorLine = ({
   orientation,
   type,
-  className
+  className,
 }: SeparatorlineProps) => {
-  const orientationClasses = orientation === ComponentOrientation.HORIZONTAL ? 'w-full h-2' : 'h-full w-2';
+  const orientationClasses =
+    orientation === ComponentOrientation.HORIZONTAL
+      ? "w-full h-2"
+      : "h-full w-2";
   const thickness = 2;
   const dashStyles: Record<SeparatorLineType, string> = {
-    "SOLID": "",
-    "DASHED": "8, 4",
-    "DOTTED": `0.1, ${thickness * 2}`,
+    SOLID: "",
+    DASHED: "8, 4",
+    DOTTED: `0.1, ${thickness * 2}`,
   };
 
   return (
@@ -21,17 +24,18 @@ const SeparatorLine = ({
       className={`${className} overflow-visible`}
     >
       <line
+        className="stroke-color-primary"
         x1="0"
         y1={thickness / 2}
         x2="100%"
         y2={thickness / 2}
-        stroke={'black'}
+        stroke={"black"}
         strokeWidth={thickness}
         strokeDasharray={dashStyles[type]}
-        strokeLinecap={'round'}
+        strokeLinecap={"round"}
       />
     </svg>
   );
-}
+};
 
 export default SeparatorLine;
