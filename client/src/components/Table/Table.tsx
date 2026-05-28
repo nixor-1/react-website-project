@@ -20,7 +20,7 @@ const Table = <T,>({
 }: GenericTableProps<T>) => {
   const borderStyling = isEmbedded
     ? ""
-    : "border border-color-primary rounded-rounding-primary border-width-secondary";
+    : "border-0 rounded-none md:border md:border-color-primary md:rounded-rounding-primary md:border-width-secondary";
   const paddingStyling = isEmbedded ? "" : "p-4";
 
   const alignmentMap = {

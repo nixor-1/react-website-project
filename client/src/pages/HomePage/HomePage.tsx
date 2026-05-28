@@ -7,15 +7,17 @@ import { useTranslation } from "react-i18next";
 const HomePage = () => {
   const { t } = useTranslation();
 
+  const spacingStyles = "pb-0 md:pb-6";
+
   return (
     <PageMarginsNew pageMarginsWidth="2" isScrollable={true}>
-      <div className="pb-6">
+      <div className={spacingStyles}>
         <TextBox
           textBoxTitle={t("home-page.welcome.title")}
           textBoxContent={<WelcomeTextBody />}
         />
       </div>
-      <div className="pb-6">
+      <div className={spacingStyles}>
         <TextBox
           textBoxTitle={t("home-page.status.title")}
           textBoxContent={<WebsiteStatusTextBody />}
