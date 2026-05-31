@@ -4,4 +4,5 @@ export interface TextBoxProps {
   textBoxTitle?: string;
   textBoxContent: ReactNode;
   iconName?: string;
+  className?: string;
 }

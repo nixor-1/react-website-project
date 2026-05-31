@@ -60,6 +60,79 @@ const ScrollPage = () => {
     },
   ];
 
+  const profileHeaderStyles =
+    "flex flex-col items-center pt-6 md:flex-row md:items-start gap-6 pb-0 md:pt-0 md:pb-6";
+
+  const mainGridStyles = "grid grid-cols-1 md:grid-cols-3 md:gap-6";
+
+  const borderStyling = "border-b-2 border-color-primary";
+
+  const cvSections = [
+    {
+      id: "work-experience",
+      titleKey: "about-page.work-experience.title",
+      icon: "business",
+      content: <WorkExperienceBody />,
+    },
+    {
+      id: "education",
+      titleKey: "about-page.education.title",
+      icon: "education",
+      content: <EducationTextBody />,
+    },
+    {
+      id: "projects",
+      titleKey: "about-page.projects.title",
+      icon: "projects",
+      content: <ProjectsTextBody />,
+    },
+    {
+      id: "passions-and-hobbies",
+      titleKey: "about-page.passions-and-hobbies.title",
+      icon: "flame",
+      content: <PassionsAndHobbiesTextBody />,
+    },
+  ];
+
+  const skillSections = [
+    {
+      titleKey: "about-page.contact-info.contact-info-title",
+      icon: "contact",
+      content: <ContactInfoTextBody />,
+    },
+    {
+      titleKey: "about-page.lang.lang-title",
+      icon: "earth",
+      content: <LangInfoTextBody />,
+    },
+    {
+      titleKey: "about-page.programming-langs.programming-langs-title",
+      icon: "binary",
+      content: <ProgrammingLangsTextBody />,
+    },
+    {
+      titleKey: "about-page.environments.environments-title",
+      icon: "environments",
+      content: <EnvironmentsTextBody />,
+    },
+    {
+      titleKey: "about-page.dev-tools.dev-tools-title",
+      icon: "wrench",
+      content: <DevelopmentToolsTextBody />,
+    },
+    {
+      titleKey:
+        "about-page.ai-and-machine-learning.ai-and-machine-learning-title",
+      icon: "bot",
+      content: <AiAndMachineLearningTextBody />,
+    },
+    {
+      titleKey: "about-page.database-systems.database-systems-title",
+      icon: "database",
+      content: <DatabaseSystemsTextBody />,
+    },
+  ];
+
   return (
     <PageMarginsNew
       pageMarginsWidth="2"
@@ -77,21 +150,23 @@ const ScrollPage = () => {
         />
       }
     >
-      <div id="profile" className="flex flex-row gap-6 pb-6">
+      <div id="profile" className={profileHeaderStyles}>
         <Image
           src={portraitImg}
           height={254}
           alt="Portrait photo of the owner of the website (Nick Jørgensen)."
         />
         <TextBox
+          className="border-t-2 border-b-2 border-color-primary"
           textBoxTitle={t("about-page.profile.profile-title")}
           textBoxContent={<ProfileBody />}
           iconName="user"
         />
       </div>
 
-      <div className="pb-6">
+      <div className="md:pb-6">
         <TextBox
+          className={`${borderStyling}`}
           textBoxTitle={t("about-page.pdf-document.title")}
           textBoxContent={
             <p className="text-color-primary">
@@ -118,89 +193,30 @@ const ScrollPage = () => {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-2 flex flex-col gap-6">
-          <div id="work-experience">
-            <TextBox
-              textBoxTitle={t("about-page.work-experience.title")}
-              textBoxContent={<WorkExperienceBody />}
-              iconName="business"
-            />
-          </div>
-
-          <div id="education">
-            <TextBox
-              textBoxTitle={t("about-page.education.title")}
-              textBoxContent={<EducationTextBody />}
-              iconName="education"
-            />
-          </div>
-
-          <div id="projects">
-            <TextBox
-              textBoxTitle={t("about-page.projects.title")}
-              textBoxContent={<ProjectsTextBody />}
-              iconName="projects"
-            />
-          </div>
-
-          <div id="passions-and-hobbies">
-            <TextBox
-              textBoxTitle={t("about-page.passions-and-hobbies.title")}
-              textBoxContent={<PassionsAndHobbiesTextBody />}
-              iconName="flame"
-            />
-          </div>
+      <div className={mainGridStyles}>
+        <div className="col-span-2 flex flex-col md:gap-6">
+          {cvSections.map((section) => (
+            <div id={section.id} key={section.id}>
+              <TextBox
+                className={`${borderStyling}`}
+                textBoxTitle={t(section.titleKey)}
+                textBoxContent={section.content}
+                iconName={section.icon}
+              />
+            </div>
+          ))}
         </div>
 
-        <aside className="col-span-1 flex flex-col gap-6">
-          <TextBox
-            textBoxTitle={t("about-page.contact-info.contact-info-title")}
-            textBoxContent={<ContactInfoTextBody />}
-            iconName="contact"
-          />
-
-          <TextBox
-            textBoxTitle={t("about-page.lang.lang-title")}
-            textBoxContent={<LangInfoTextBody />}
-            iconName="earth"
-          />
-
-          <TextBox
-            textBoxTitle={t(
-              "about-page.programming-langs.programming-langs-title",
-            )}
-            textBoxContent={<ProgrammingLangsTextBody />}
-            iconName="binary"
-          />
-
-          <TextBox
-            textBoxTitle={t("about-page.environments.environments-title")}
-            textBoxContent={<EnvironmentsTextBody />}
-            iconName="environments"
-          />
-
-          <TextBox
-            textBoxTitle={t("about-page.dev-tools.dev-tools-title")}
-            textBoxContent={<DevelopmentToolsTextBody />}
-            iconName="wrench"
-          />
-
-          <TextBox
-            textBoxTitle={t(
-              "about-page.ai-and-machine-learning.ai-and-machine-learning-title",
-            )}
-            textBoxContent={<AiAndMachineLearningTextBody />}
-            iconName="bot"
-          />
-
-          <TextBox
-            textBoxTitle={t(
-              "about-page.database-systems.database-systems-title",
-            )}
-            textBoxContent={<DatabaseSystemsTextBody />}
-            iconName="database"
-          />
+        <aside className="col-span-1 flex flex-col md:gap-6">
+          {skillSections.map((section, idx) => (
+            <TextBox
+              key={idx}
+              className={`${borderStyling}`}
+              textBoxTitle={t(section.titleKey)}
+              textBoxContent={section.content}
+              iconName={section.icon}
+            />
+          ))}
         </aside>
       </div>
     </PageMarginsNew>
