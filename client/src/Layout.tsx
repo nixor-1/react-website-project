@@ -60,7 +60,10 @@ const Layout = () => {
     },
     {
       // onClick: () => i18n.changeLanguage("da"),
-      onClick: () => changeLangUrl("da"),
+      onClick: () => {
+        console.log("klikket på dansk");
+        changeLangUrl("da");
+      },
       btnText: "Dansk",
       hasShadow: false,
     },
@@ -122,8 +125,56 @@ const Layout = () => {
         <ComponentBar
           orientation={ComponentOrientation.HORIZONTAL}
           sepBar={true}
-          components={navBtnsTest}
-        />
+        >
+          <ComponentBar.Group alignment="left">
+            <Btn
+              iconName="home"
+              btnText={t("nav-bar.home")}
+              onClick={() => navigate("home")}
+            />
+            <Btn
+              iconName="rss"
+              btnText={t("nav-bar.blog")}
+              onClick={() => navigate("blog")}
+            />
+            <Btn
+              iconName="user"
+              btnText={t("nav-bar.cv")}
+              onClick={() => navigate("about")}
+            />
+            <DropdownMenu
+              dropdownMenuIconName="earth"
+              dropdownMenuLabel={t("nav-bar.lang")}
+              dropdownMenuItems={dropdownMenuItems}
+            />
+            <Btn
+              iconName={isDarkMode ? "moon" : "sun"}
+              btnText={
+                isDarkMode ? t("settings.dark-mode") : t("settings.light-mode")
+              }
+              onClick={() => setIsDarkMode((prev) => !prev)}
+            />
+          </ComponentBar.Group>
+
+          {/* 👉 RIGHT CONTACT & SOCIAL GROUP */}
+          <ComponentBar.Group alignment="right">
+            <Btn
+              iconName="mail"
+              btnText={t("contact-info.mail")}
+              href="mailto:nick.joergensen1@protonmail.com"
+            />
+            <Btn
+              iconName="linkedin"
+              btnText={t("socials.linkedin")}
+              href="https://www.linkedin.com/in/nick-j%C3%B8rgensen-22735293/"
+            />
+            <Btn
+              iconName="github"
+              btnText={t("socials.github")}
+              href="https://github.com/nixor-1"
+            />
+          </ComponentBar.Group>
+        </ComponentBar>
       </div>
 
       <main className="items-center row-start-2 h-full w-full overflow-y-auto flex flex-col justify-between">

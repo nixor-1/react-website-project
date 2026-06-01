@@ -1,2 +1,2 @@
-export { default } from './ComponentBar';
-export * from './ComponentBar.types';
+export { default } from "./ComponentBar";
+export * from "./ComponentBar.types";
