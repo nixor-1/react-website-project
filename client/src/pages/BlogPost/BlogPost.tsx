@@ -125,6 +125,7 @@ const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
     <div className="grid grid-rows-[auto_1fr] h-full w-full overflow-hidden">
       <PageMarginsNew pageMarginsWidth="2">
         <TextBox
+          className="w-full border-t border-b-2 border-color-primary md:border-0"
           textBoxTitle={blogPost?.title}
           textBoxContent={<BlogPostContent />}
         />

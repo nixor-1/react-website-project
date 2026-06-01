@@ -126,8 +126,8 @@ const Layout = () => {
         />
       </div>
 
-      <main className="items-center row-start-2 h-full overflow-y-auto flex flex-col justify-between">
-        <div className="flex-grow">
+      <main className="items-center row-start-2 h-full w-full overflow-y-auto flex flex-col justify-between">
+        <div className="w-full flex-grow">
           <Outlet />
         </div>
 
@@ -140,10 +140,6 @@ const Layout = () => {
           />
         </footer>
       </main>
-
-      {/* <div className="row-start-2 h-full overflow-hidden"> */}
-      {/*   <Outlet /> */}
-      {/* </div> */}
     </div>
   );
 };
