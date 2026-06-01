@@ -133,6 +133,7 @@ const Layout = () => {
 
         <footer className="text-center pb-6">
           <TextBox
+            className="md:border-0 border-2 border-color-primary rounded-rounding-primary"
             textBoxContent={
               <p className="text-gray-500">{t("copyright-message")}</p>
             }
