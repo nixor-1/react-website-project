@@ -102,7 +102,7 @@ const Layout = () => {
     <Btn
       iconName="mail"
       btnText={t("contact-info.mail")}
-      href="mailto:nickjoergensen1@gmail.com"
+      href="mailto:nick.joergensen1@protonmail.com"
     />,
     <Btn
       iconName="linkedin"

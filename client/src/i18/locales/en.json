@@ -2,7 +2,7 @@
   "nav-bar": {
     "home": "Home",
     "blog": "Blog",
-    "cv": "CV",
+    "cv": "Resume",
     "lang": "Language: English"
   },
   "copyright-message": "© 2026 Nick Jørgensen. All rights reserved.",
@@ -11,7 +11,7 @@
     "github": "GitHub"
   },
   "contact-info": {
-    "mail": "nickjoergensen1@gmail.com"
+    "mail": "nick.joergensen1@protonmail.com"
   },
   "home-page": {
     "welcome": {
