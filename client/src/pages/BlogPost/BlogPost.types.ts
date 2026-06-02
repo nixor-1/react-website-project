@@ -5,18 +5,19 @@ export interface BlogPostProps {
   content: string;
   createdAt?: Date;
   updatedAt?: Date;
+  tags?: string[];
 }
 
 export enum BlogPostMode {
   ViewMode = "VIEW_MODE",
   CreateMode = "CREATE_MODE",
-  EditMode = "EDIT_MODE"
+  EditMode = "EDIT_MODE",
 }
 
 export enum BlogPostBodyElementType {
   Title = "title",
   Description = "description",
-  Body = "body"
+  Body = "body",
 }
 
 export interface BlogPostBodyElementProps {

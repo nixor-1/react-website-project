@@ -226,7 +226,8 @@
   },
   "blog-post": {
     "creation-date": "Oprettet:",
-    "last-update-date": "Opdateret:"
+    "last-update-date": "Opdateret:",
+    "tags": "Tags:"
   },
   "settings": {
     "dark-mode": "Tilstand: mørk",

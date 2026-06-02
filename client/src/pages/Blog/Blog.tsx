@@ -42,8 +42,8 @@ const Blog = () => {
             resolvedList.push({
               slug,
               title: module.frontmatter.title || "Untitled",
-              date: module.frontmatter.date || "—",
-              excerpt: module.frontmatter.excerpt || "",
+              date: module.frontmatter["date-created"] || "—",
+              excerpt: module.frontmatter["date-updated"] || "",
             });
           }
         }

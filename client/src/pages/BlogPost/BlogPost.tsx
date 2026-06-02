@@ -37,20 +37,34 @@ const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
             setMdxComponent(() => module.default);
 
             if (module.frontmatter) {
-              const postDate = module.frontmatter.date
-                ? new Date(module.frontmatter.date)
+              const createdDateRaw = module.frontmatter["date-created"];
+              const updatedDateRaw = module.frontmatter["date-updated"];
+
+              const createdDate = createdDateRaw
+                ? new Date(createdDateRaw)
                 : undefined;
-              // Fallback checking to ensure it created a valid Date instance
-              const validDate =
-                postDate && !isNaN(postDate.getTime()) ? postDate : undefined;
+              const updatedDate = updatedDateRaw
+                ? new Date(updatedDateRaw)
+                : undefined;
+
+              const validCreatedDate =
+                createdDate && !isNaN(createdDate.getTime())
+                  ? createdDate
+                  : undefined;
+
+              const validUpdatedDate =
+                updatedDate && !isNaN(updatedDate.getTime())
+                  ? updatedDate
+                  : undefined;
 
               const mockData: BlogPostProps = {
                 id: id,
                 title: module.frontmatter.title || "Untitled",
-                description: module.frontmatter.excerpt || "",
+                description: module.frontmatter.desc || "",
                 content: "",
-                createdAt: validDate,
-                updatedAt: validDate,
+                createdAt: validCreatedDate,
+                updatedAt: validUpdatedDate,
+                tags: module.frontmatter.tags,
               };
               setBlogPost(mockData);
             }
@@ -103,6 +117,20 @@ const BlogPost = ({ isNewPost }: { isNewPost: boolean }) => {
             {blogPost?.updatedAt
               ? new Date(blogPost?.updatedAt).toLocaleString()
               : "—"}
+          </span>
+          <span className="text-gray-400 text-xs font-medium">
+            {t("blog-post.tags")}
+          </span>
+          <span className="text-gray-500 text-xs flex flex-wrap gap-2">
+            {blogPost?.tags &&
+              blogPost.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded"
+                >
+                  {tag}
+                </span>
+              ))}
           </span>
         </div>
 
