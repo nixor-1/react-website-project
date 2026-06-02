@@ -15,7 +15,9 @@ const TextBox = ({
 
   return (
     <section
-      className={`${containerBorderStyles} ${className ? className : ""} bg-bg-color-primary overflow-hidden`}
+      className={`flex flex-col ${containerBorderStyles} ${
+        className ? className : ""
+      } bg-bg-color-primary overflow-hidden`}
     >
       {(iconName || textBoxTitle) && (
         <div className="flex flex-row items-center gap-2 bg-accent-color-primary p-4 border-b border-color-primary">
@@ -27,7 +29,7 @@ const TextBox = ({
       )}
 
       <div
-        className={`text-color-primary leading-relaxed p-4 ${
+        className={`text-color-primary leading-relaxed p-4 flex-1 min-h-0 overflow-y-auto ${
           isRichContent ? "whitespace-normal" : "whitespace-pre-wrap"
         }`}
       >

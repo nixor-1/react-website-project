@@ -1,11 +1,5 @@
 import { BtnProps } from "./components/Btn/Btn.types";
-import {
-  useLocation,
-  useNavigate,
-  Outlet,
-  useParams,
-  generatePath,
-} from "react-router-dom";
+import { useLocation, useNavigate, Outlet, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ComponentBar from "./components/ComponentBar";
 import { ComponentOrientation } from "@react-project/shared/components";

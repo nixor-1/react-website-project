@@ -157,7 +157,7 @@ const ScrollPage = () => {
           alt="Portrait photo of the owner of the website (Nick Jørgensen)."
         />
         <TextBox
-          className="border-t-2 border-b-2 border-color-primary"
+          className="border-t-2 border-b-2 border-color-primary md:grow md:h-[254px]"
           textBoxTitle={t("about-page.profile.profile-title")}
           textBoxContent={<ProfileBody />}
           iconName="user"
