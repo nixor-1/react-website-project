@@ -203,6 +203,9 @@
       "english": "English",
       "french": "French"
     },
+    "web-dev": {
+      "title": "Web development"
+    },
     "programming-langs": {
       "programming-langs-title": "Programming languages"
     },

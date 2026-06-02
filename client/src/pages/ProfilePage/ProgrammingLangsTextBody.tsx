@@ -7,20 +7,20 @@ const ProgrammingLangsTextBody = () => {
   return (
     <BlockText
       textElems={[
-        'JavaScript',
-        'TypeScript',
-        'Python',
-        'Java',
-        'C',
-        'C++',
-        'F#',
-        'R',
-        'Prolog',
-        'XML'
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "C",
+        "C++",
+        "F#",
+        "R",
+        "Lua",
+        "Prolog",
+        "XML",
       ]}
     />
-
-  )
-}
+  );
+};
 
 export default ProgrammingLangsTextBody;

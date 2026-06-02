@@ -7,19 +7,19 @@ const WebDevTextBody = () => {
   return (
     <BlockText
       textElems={[
-        'React',
-        'Vite',
-        'GraphQL',
-        'Firebase Cloud Messaging',
-        'Redux',
-        'Redux Toolkit',
-        'RabbitMQ',
-        'HTML',
-        'CSS'
+        "React",
+        "Vite",
+        "GraphQL",
+        "Firebase Cloud Messaging",
+        "Redux",
+        "Redux Toolkit",
+        "RabbitMQ",
+        "HTML",
+        "CSS",
+        "Vercel",
       ]}
     />
-
-  )
-}
+  );
+};
 
 export default WebDevTextBody;

@@ -106,6 +106,11 @@ const ScrollPage = () => {
       content: <LangInfoTextBody />,
     },
     {
+      titleKey: "about-page.web-dev.title",
+      icon: "web-dev",
+      content: <WebDevTextBody />,
+    },
+    {
       titleKey: "about-page.programming-langs.programming-langs-title",
       icon: "binary",
       content: <ProgrammingLangsTextBody />,
