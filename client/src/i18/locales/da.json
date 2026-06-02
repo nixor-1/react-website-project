@@ -225,7 +225,12 @@
   "blog-posts-table": {
     "header-title": "Blogindlæg",
     "creation-date": "Oprettet",
-    "last-update-date": "Opdateret"
+    "last-update-date": "Opdateret",
+    "nav": {
+      "btn-left": "Sidste side",
+      "btn-right": "Næste side",
+      "page-display": "Side {{ pageNum }} af {{numTotalPages}}" 
+    }
   },
   "blog-post": {
     "creation-date": "Oprettet:",

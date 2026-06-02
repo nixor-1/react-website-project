@@ -225,7 +225,12 @@
     "blog-posts-table": {
     "header-title": "Blog posts",
     "creation-date": "Created",
-    "last-update-date": "Updated"
+    "last-update-date": "Updated",
+    "nav": {
+      "btn-left": "Last page",
+      "btn-right": "Next page",
+      "page-display": "Page {{ pageNum }} of {{numTotalPages}}" 
+    }
   },
     "blog-post": {
     "creation-date": "Created:",

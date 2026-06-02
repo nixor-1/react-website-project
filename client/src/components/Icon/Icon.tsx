@@ -27,6 +27,8 @@ import {
   LuDatabase,
   LuMapPin,
   LuFolderOpen,
+  LuArrowBigLeft,
+  LuArrowBigRight,
 } from "react-icons/lu";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
@@ -61,6 +63,8 @@ const IconMap: IconMapping = {
   database: LuDatabase,
   location: LuMapPin,
   projects: LuFolderOpen,
+  "arrow-left": LuArrowBigLeft,
+  "arrow-right": LuArrowBigRight,
 };
 
 const Icon = ({ iconName, size }: IconProps) => {

@@ -5,6 +5,8 @@ import { GenericTableColumn } from "../../components/Table/Table.types";
 import Table from "../../components/Table";
 import { useTranslation } from "react-i18next";
 import PageMarginsNew from "../../components/PageMargins/PageMarginsNew";
+import Btn from "../../components/Btn";
+import TextBox from "../../components/TextBox";
 
 interface BlogMetadata {
   slug: string;
@@ -27,6 +29,9 @@ const Blog = () => {
   const { t } = useTranslation();
   const [testPosts, setTestPosts] = useState<BlogMetadata[]>([]);
   const [mdxLoading, setMdxLoading] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const POSTS_PER_PAGE = 5;
 
   useEffect(() => {
     const fetchAllMetadata = async () => {
@@ -74,6 +79,16 @@ const Blog = () => {
     }));
   }, [testPosts]);
 
+  const totalPages = useMemo(() => {
+    return Math.max(1, Math.ceil(formattedMdxPosts.length / POSTS_PER_PAGE));
+  }, [formattedMdxPosts, POSTS_PER_PAGE]);
+
+  const paginatedMdxPosts = useMemo(() => {
+    const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+    const endIndex = startIndex + POSTS_PER_PAGE;
+    return formattedMdxPosts.slice(startIndex, endIndex);
+  }, [formattedMdxPosts, currentPage, POSTS_PER_PAGE]);
+
   const columns: GenericTableColumn<BlogPostProps>[] = [
     {
       header: t("blog-posts-table.header-title"),
@@ -114,12 +129,44 @@ const Blog = () => {
   return (
     <PageMarginsNew pageMarginsWidth="2">
       <Table
-        data={formattedMdxPosts}
+        data={paginatedMdxPosts}
         columns={columns}
         rowKey={(post) => post.id}
         useFixedLayout={true}
         onRowClick={(post) => navigate(`${post.id}`)}
       />
+
+      <div className="flex flex-row items-center justify-center mt-6 gap-4 w-full">
+        <Btn
+          btnText={t("blog-posts-table.nav.btn-left")}
+          iconName="arrow-left"
+          disabled={currentPage === 1}
+          onClick={() => {
+            setCurrentPage((prev) => Math.max(prev - 1, 1));
+          }}
+        />
+
+        <TextBox
+          className="whitespace-nowrap px-4 m-0"
+          textBoxContent={
+            <span className="text-sm font-medium text-color-primary">
+              {t("blog-posts-table.nav.page-display", {
+                pageNum: currentPage,
+                numTotalPages: totalPages,
+              })}
+            </span>
+          }
+        />
+
+        <Btn
+          btnText={t("blog-posts-table.nav.btn-right")}
+          iconName="arrow-right"
+          disabled={currentPage === totalPages}
+          onClick={() => {
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+          }}
+        />
+      </div>
     </PageMarginsNew>
   );
 };

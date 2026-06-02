@@ -225,7 +225,12 @@
     "blog-posts-table": {
     "header-title": "Articles de blog",
     "creation-date": "Créé",
-    "last-update-date": "Mise à jour"
+    "last-update-date": "Mise à jour",
+    "nav": {
+      "btn-left": "Dernière page",
+      "btn-right": "Prochaine page",
+      "page-display": "Page {{ pageNum }} de {{numTotalPages}}" 
+    }
   },
     "blog-post": {
     "creation-date": "Créé :",
