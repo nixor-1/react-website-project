@@ -41,9 +41,22 @@ const ComponentBar = ({
   const isHorizontal = orientation === ComponentOrientation.HORIZONTAL;
 
   const [forceMobileLayout, setForceMobileLayout] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
+  const innerScrollRef = useRef<HTMLDivElement>(null);
   const measuringRef = useRef<HTMLDivElement>(null);
+
+  const checkScrollLimits = () => {
+    if (innerScrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = innerScrollRef.current;
+
+      // Using a 1px buffer to account for sub-pixel rounding errors on high-DPI screens
+      setCanScrollLeft(scrollLeft > 1);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
+    }
+  };
 
   useEffect(() => {
     if (!isHorizontal) return;
@@ -69,6 +82,10 @@ const ComponentBar = ({
     return () => observer.disconnect();
   }, [isHorizontal, children]);
 
+  useEffect(() => {
+    checkScrollLimits();
+  }, [forceMobileLayout]);
+
   const outerClasses = `
     relative flex w-full min-w-0
     ${sepBar ? "bg-color-primary" : ""} 
@@ -87,7 +104,15 @@ const ComponentBar = ({
 
   return (
     <div className={outerClasses} ref={containerRef}>
-      <div className={innerClasses}>
+      {isHorizontal && canScrollLeft && (
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-accent-color-primary to-transparent pointer-events-none z-10 transition-opacity duration-300" />
+      )}
+
+      <div
+        className={innerClasses}
+        ref={innerScrollRef}
+        onScroll={checkScrollLimits}
+      >
         {Children.map(children, (child) => {
           if (isValidElement(child) && child.type === ComponentBarGroup) {
             return React.cloneElement(child, { forceMobileLayout } as any);
@@ -95,6 +120,10 @@ const ComponentBar = ({
           return child;
         })}
       </div>
+
+      {isHorizontal && canScrollRight && (
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-accent-color-primary to-transparent pointer-events-none z-10 transition-opacity duration-300" />
+      )}
 
       {/* A hidden element used to provide the exact pixel width required to render all items without wrapping or compression. */}
       {isHorizontal && (

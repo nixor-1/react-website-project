@@ -150,7 +150,6 @@ const Layout = () => {
             />
           </ComponentBar.Group>
 
-          {/* 👉 RIGHT CONTACT & SOCIAL GROUP */}
           <ComponentBar.Group alignment="right">
             <Btn
               iconName="mail"
