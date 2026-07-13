@@ -48,7 +48,7 @@ const Blog = () => {
               slug,
               title: module.frontmatter.title || "Untitled",
               date: module.frontmatter["date-created"] || "—",
-              excerpt: module.frontmatter["date-updated"] || "",
+              excerpt: module.frontmatter["desc"] || "",
             });
           }
         }
