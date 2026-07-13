@@ -147,7 +147,7 @@ const Blog = () => {
         />
 
         <TextBox
-          className="whitespace-nowrap px-4 m-0"
+          className="md:border-0 border-2 border-color-primary rounded-rounding-primary"
           textBoxContent={
             <span className="text-sm font-medium text-color-primary">
               {t("blog-posts-table.nav.page-display", {

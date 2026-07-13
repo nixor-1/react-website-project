@@ -1,0 +1,46 @@
+---
+title: "Site is now running on AWS"
+date-created: "2026-07-13"
+date-updated: "2026-07-13"
+desc: "I rented an EC2 machine and set it up with Apache to run my website. Certain features yet to be implemented."
+tags:
+  - aws 
+  - platforms
+  - servers
+  - websites
+---
+
+import List from '../../client/src/components/List';
+
+I have successfully set my website up to run on an AWS EC2 server with Apache HTTP Server. The website is currently running on a free tier on which I have 100 dollars worth of credit. For a while, it only ran on Vercel, which does not grant as much power over the hardware and software as I'd like.
+
+The following steps were involved in making this happen:
+
+<List 
+  listItems={[
+    { 
+      listItemLabel: "Buying a domain name",
+      listItemBody: "I bought the domain name \"nickjoergensen.com\" from Cloudflare." 
+    },
+    { 
+      listItemLabel: "Renting an EC2 machine", 
+      listItemBody: "I rented an AWS EC2 machine which I can access via SSH." 
+    },
+    { 
+      listItemLabel: "Setting up an AWS elastic IP (EIP)", 
+      listItemBody: "The public IP of the EC2 instance changes every time it stops and starts again. With an EIP, a permanent IP is created." 
+    },
+    { 
+      listItemLabel: "Setting up records on Cloudflare", 
+      listItemBody: "In and of itself, a domain name does nothing. Therefore, I had to set up records on Cloudflare's website to make sure their DNS service pointed this domain name to the proper IP." 
+    },
+    { 
+      listItemLabel: "SPA fallback", 
+      listItemBody: "SPA fallback is required as certain site paths, e.g., \"/en/home\" would otherwise confuse the Apache server into thinking that a file should be looked up on that path. To prevent this, and let React router take over, rules were implemented in Apache that state that index.html should be pointed to unless an actual file resides at the path in question."
+    },
+    { 
+      listItemLabel: "Getting a certificate", 
+      listItemBody: "In order to implement HTTPS, a certificate first needs to be granted. For this, certbot was installed on the server and run. This service took care of much of the work, and the implementation of SSL/TLS was seamless."
+    }
+  ]} 
+/>
