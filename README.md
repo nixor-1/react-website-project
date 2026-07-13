@@ -1,25 +1,7 @@
-# My personal website
+# Overview
 
-A full-stack web application featuring a dynamic React frontend built with Vite, TypeScript, and Tailwind CSS v4, backed by an Express server managing content and data streams.
+This is my personal website consisting of a React frontend built with Vite and TypeScript. Principal features of my personal website include:
 
----
-
-## 🚀 Features
-
-- **Dynamic Blog Engine:** Compiles and renders local MDX files with custom structural layout caching.
-- **Isolated Design System:** Uses Tailwind CSS v4 utility architecture safely separated from native document styling.
-- **Robust Type Safety:** End-to-end static type checking with TypeScript across client boundaries.
-- **Fluid UI Containers:** Reusable custom layout components supporting rich content variants.
-
----
-
-## 🛠️ Tech Stack
-
-**Frontend:**
-- React (Vite)
-- TypeScript
-- Tailwind CSS v4
-- React Router DOM
-
-**Backend:**
-- Node.js & Express
+- **A blog:** I have a blog section in which blog posts, written by me, can be read at the visitor's leisure.
+- **A resume/about page:** You can read a little about me, my background, my interests, and skills.
+- **Links:** You can find links to some of my other socials.
