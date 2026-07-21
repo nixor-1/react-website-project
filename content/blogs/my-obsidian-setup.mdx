@@ -1,0 +1,158 @@
+---
+title: "My Obsidian setup"
+date-created: "2026-07-21"
+date-updated: "2026-07-21"
+desc: "A walkthrough of my folder structure, kinds of files, MOC structure, and scripts, used in my Obsidian vault."
+tags:
+  - obsidian
+  - personal-knowledge-management
+  - files
+  - folders
+---
+
+import List from '../../client/src/components/List';
+import Image from '../../client/src/components/Image';
+
+import screenshot from "../../client/src/assets/screenshot-obsidian-gradient-descent-note.png";
+
+# MOC structure
+
+My Obsidian vault makes use of the so-called MOC structure, a concept popularized by Nick Milo and/or invented by him in the world of personal knowledge management (PKM) and Obsidian. Implementing an MOC structure involves structuring certain files (in the case of Obsidian, `.md` files) as hubs, linking to other files which share that hub's theme or subject. These files that are linked to may in turn be either another MOC file, or a regular note which does not inherently act as a hub. The concept is thus quite simple to understand, but it may not be as simple to understand why it is needed, at least not to the note-taking novice 🧐.
+
+## Initial setup and its limitations
+
+Initially, after installing Obsidian, I simply created folders for every theme and subject in which I wanted to sort other folders and notes. However, after some time doing this, it became quite clear that such a setup had its limitations, with the premier being that notes could not reside in two folders at once. This limitation only kept becoming more clear with an ever-increasing number of notes in my Obsidian vault.
+
+If you are technically inclined, you may wonder if I could not have solved this limitation with symlinks, symbolically linking a file to all the folder locations in which I wanted it to be located. There are two reasons for this:
+
+<List
+  listItems={[
+    {
+      listItemLabel: "Strongly disadvised",
+      listItemBody: "The Obsidian team strongly advises against using symlinks, for a number of reasons, which can be read here: https://obsidian.md/help/symlinks."
+    },
+    {
+      listItemLabel: "OS dependence",
+      listItemBody: "As symlinks are managed by the OS, if I were to want to somehow migrate my vault to another machine, these symlinks would break."
+    },
+    {
+      listItemLabel: "Residence of \"master\" file",
+      listItemBody: "Of minor practical concern, but still of personal irritiation, is the fact that the original file would have to reside in one of the multiple folders in which the file and its symlinks should be found. This makes me itch as I find it inelegant that the original file is arbitrarily placed in one of these folders, even though the original file and its symlinks should be of equal importance in practical terms. This would also mean that I would have to somehow track in which folder the original file resides."
+    }
+  ]}
+/>
+
+For all of these reasons, I found the MOC structure to be beneficial. This structure:
+
+<List
+  listItems={[
+    {
+      listItemBody: "Allows files to be accessible from an arbitrary number of other files, including MOCs, which now take on a role analogous to that of folders in my initial vault setup."
+    },
+    {
+      listItemBody: "Does not make use of symlinks."
+    },
+    {
+      listItemBody: "Saves all files in a single folder, implying no hierarchy of importance between them."
+    }
+  ]}
+/>
+
+# Filenames
+
+I have decided that all filenames in my vault follow the kebab-case naming scheme, changing all non-standard ASCII characters and symbols to their standard ASCII equivalents. For example, the Danish letters 'æ', 'ø', and 'å' are respectively converted to 'ae', 'oe', and 'aa'. This was simply because I prefer this naming scheme and it makes them more manageable in a world dominated by English letters. It has happened more than once that issues arose with my own last name (Jørgensen) in software.
+
+# Scripts
+
+I have implemented and employed several Python scripts to keep my Obsidian vault in the shape and form that I desire. These can be found here: https://github.com/nixor-1/obsidian-scripts. For example, the script `rename-filenames.py` implements the kebab-case naming scheme.
+
+I will not go over them all, as brief descriptions of them can be found through the above link.
+
+# Folder structure
+
+My vault currently consist of 9 top-level folders:
+
+
+<List
+  listItems={[
+    {
+      listItemLabel: "DTU",
+      listItemBody: "A vestige of my older vault setup in which folders were king. This folder consists of an enormous number of notes taken during my studies at the Technical University of Denmark (DTU) which are still to be sorted and injected into my newer MOC setup."
+    },
+    {
+      listItemLabel: "Kilder",
+      listItemBody: "This folder contains notes that act as sources (Danish: \"kilder\"). When I need to show a source, I simply link to a note from this folder."
+    },
+    {
+      listItemLabel: "Logge",
+      listItemBody: "This folder contains my daily logs (Danish \"logge\")."
+    },
+    {
+      listItemLabel: "Media",
+      listItemBody: "This folder is subdivided into folders named after media file formats, e.g., \"PNG\" and \"SVG\". This is where I store all of my media files, which can then be linked to in my actual notes."
+    },
+    {
+      listItemLabel: "MOC'er",
+      listItemBody: "This is where I store all of my MOCs."
+    },
+    {
+      listItemLabel: "Noter",
+      listItemBody: "This is where I store all of my notes."
+    },
+    {
+      listItemLabel: "Planer",
+      listItemBody: "This is where I store my daily plans (Danish: \"planer\")."
+    },
+    {
+      listItemLabel: "Projekter",
+      listItemBody: "This is where I keep files relating to projects that are less suited to being injected into my overall MOC structure, as these notes may not be \"eternal\". For example, I have subfolders in this folder storing files related to exercises, to-do lists, etc."
+    },
+    {
+      listItemLabel: "Templates",
+      listItemBody: "This is simply a folder for storing Obsidian templates."
+    }
+  ]}
+/>
+
+Besides these folders, I only have one other top-level element in the vault: the entry point for all my notes, consisting of an MOC file pointing to other MOCs which spread out to cover all other MOCs and notes in the vault. I use the \"Homepage\" plugin by mirnovov to open this starting page every time I open Obsidian.
+
+# File metadata
+
+I use several metadata fields to be able to find and manipulate the files in my vault. These include:
+
+<List
+  listItems={[
+    {
+      listItemLabel: "tags",
+      listItemBody: "My tags are not very consistent, but ideally they should more or less mirror the MOC structure completely, reflecting the themes, subjects, and categories in which the note in question is located."
+    },
+    {
+      listItemLabel: "sprog",
+      listItemBody: "Danish for \"language\". Currently, my vault consists of notes in English, Danish, and French. The value of this metadata field may thus take the following possible values: \"engelsk\" (English: English), \"dansk\" (English: Danish), and \"fransk\" (English: French)."
+    },
+    {
+      listItemLabel: "type",
+      listItemBody: "Denotes the type of the file in question. The file may be a note (\"type: note\"), an MOC (\"type: moc\"), a source (\"type: kilde\"), a plan (\"type: plan\"), or a log (\"type: log\")."
+    },
+    {
+      listItemLabel: "titel",
+      listItemBody: "Danish for \"title\". Holds the full title of the file in question."
+    },
+    {
+      listItemLabel: "aliases",
+      listItemBody: "Holds aliases for the file in question, with at least one of them being equal to that of the metadata field \"titel\"."
+    }
+  ]}
+/>
+
+# Note writing and structure
+
+I have a somewhat unorthodox way of writing and structuring my notes, where every note may at surface level seem to sometimes consist of disparate notes. I have chosen to embed all notes in either of two callbacks: ones with titles (by far most of them), and ones without. These are styled with CSS to clearly show a thin square around the text, with the title just above, so that one may immediately and clearly distinguish between individual text/note blocks in a note file.
+
+Below, an example of this may be seen:
+
+<Image
+  src={screenshot}
+  height={1024}
+  alt="Screenshot of an Obsidian note on gradient descent."
+/>
